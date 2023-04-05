@@ -366,6 +366,8 @@ screen main_menu():
     if gui.show_name:
 
         vbox:
+            yalign 0.1
+            xalign 0.45
             style "main_menu_vbox"
 
             text "[config.name!t]":
@@ -373,6 +375,7 @@ screen main_menu():
 
             text "[config.version]":
                 style "main_menu_version"
+
 
 
 style main_menu_frame is empty
@@ -399,9 +402,13 @@ style main_menu_text:
 
 style main_menu_title:
     properties gui.text_properties("title")
+    color "#fff" # White
+    outlines [(1, "#000", 0, 0)]
 
 style main_menu_version:
     properties gui.text_properties("version")
+    color "#fff" # White
+    outlines [(1, "#000", 0, 0)]
 
 
 ## Game Menu screen ############################################################

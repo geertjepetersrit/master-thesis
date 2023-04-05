@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/at_home.rpy", line 72: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    if is_dutch:
-    ^
+File "game/screens.rpy", line 373: 'xalgin' is not a keyword argument or valid child for the text statement.
+    xalgin 0.5
+          ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Apr  5 11:06:44 2023
+Wed Apr  5 18:30:09 2023

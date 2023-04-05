@@ -43,6 +43,7 @@ label at_home:
                 jump .fixed_gender
 
 
+    # TODO: extend this
     #     if gender == "female":
     #         # Show female avatar
     #     elif gender == "male":
@@ -52,12 +53,11 @@ label at_home:
 
     label .fixed_gender: # Lock player's choice
         $renpy.fix_rollback()
-        "Fixed gender"
-        jump .country
+        "Then you try to remember more."
 
     label .country:
         menu:
-            "Then you try to remember more. A question pops up in your head: \“What country am I from?\” "
+            "A question pops up in your head: \“What country am I from?\” "
 
             "the Netherlands":
                 $is_dutch = True
@@ -70,7 +70,6 @@ label at_home:
 
     label .fixed_country: # Lock player's choice
         $renpy.fix_rollback()
-        "Fix country"
 
         "It all comes back to you now. Your name is..."
 
@@ -78,6 +77,7 @@ label at_home:
             show dutch_avatar at above_left with moveinleft
             "Jip and today is your first day at Utrecht University."
             "While you have visited several universities on many open days, Utrecht is all you wanted."
+            j "{i}I'm thinking{\i}."
         else:
             show international_avatar at above_left with moveinleft
             "Sam and today is your first day at Utrecht University."
@@ -103,7 +103,6 @@ label at_home:
 
     label .fixed_breakfast: # Lock player's choice
         $renpy.fix_rollback()
-        "Fix breakfast"
 
         if breakfast == "hagelslag":
             "Maybe you’ll even add a dot of peanut butter for the sweet tooth."
