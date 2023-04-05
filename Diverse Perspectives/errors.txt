@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/at_home.rpy", line 72: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    if is_dutch:
+    ^
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Wed Apr  5 11:06:44 2023
