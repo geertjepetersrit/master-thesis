@@ -2,6 +2,16 @@
 
 # The game starts here.
 
+# Create a .txt file to write down the player's choices
+
+init python:
+
+    def send_to_file(filename, text):
+        with open(config.gamedir + "/" + filename, "a") as f:
+            f.write(text)
+            f.close()
+        return
+
 label start:
 
     $score = 0

@@ -34,12 +34,17 @@ label at_home:
 
             "Female":
                 $gender = "female"
+                $score += 1
+                $send_to_file("choices.txt", "Female\n")
                 jump .fixed_gender
             "Male":
                 $gender = "male"
+                $send_to_file("choices.txt", "Male\n")
                 jump .fixed_gender
             "Non-binary":
                 $gender = "nb"
+                $score -= 1
+                $send_to_file("choices.txt", "NB\n")
                 jump .fixed_gender
 
 
@@ -62,10 +67,12 @@ label at_home:
             "the Netherlands":
                 $is_dutch = True
                 $score += 1
+                $send_to_file("choices.txt", "Dutch\n")
                 jump .fixed_country
             "Abroad":
                 $is_dutch = False
                 $score -= 1
+                $send_to_file("choices.txt", "Abroad\n")
                 jump .fixed_country
 
     label .fixed_country: # Lock player's choice
@@ -92,13 +99,16 @@ label at_home:
             "Bread with {i}hagelslag{\i} (chocolate sprinkles)":
                 $breakfast = "hagelslag"
                 $score += 1
+                $send_to_file("choices.txt", "Hagelslag\n")
                 jump .fixed_breakfast
             "Yoghurt with fruit and muesli":
                 $breakfast = "yoghurt"
+                $send_to_file("choices.txt", "Yoghurt\n")
                 jump .fixed_breakfast
             "Nothing":
                 $breakfast = "nothing"
                 $score += -1
+                $send_to_file("choices.txt", "Nothing\n")
                 jump .fixed_breakfast
 
     label .fixed_breakfast: # Lock player's choice
@@ -112,4 +122,4 @@ label at_home:
             "Skipping breakfast saves time! But you put a snack in your bag to eat later."
 
     scene hostel_outside with Dissolve(0.5)
-    "Total score is [score]"
+    $send_to_file("choices.txt", "The total score is " + str(score) + "\n")
