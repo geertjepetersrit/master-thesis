@@ -1,9 +1,7 @@
 ﻿# The script of the game goes in this file.
-
 # The game starts here.
 
 # Create a .txt file to write down the player's choices
-
 init python:
 
     def send_to_file(filename, text):
@@ -15,7 +13,6 @@ init python:
 label start:
 
     $score = 0
-
     # Narrative intro
 
     # Enter monologue mode
@@ -37,5 +34,4 @@ label start:
     # TODO: add more scenes
 
     # This ends the game and returns to the main menu
-
     return

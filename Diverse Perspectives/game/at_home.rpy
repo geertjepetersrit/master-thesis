@@ -5,18 +5,17 @@ define j = Character("Jip", color = "#99ccff")
 define s = Character("Sam", color = "#ff99ff")
 
 # Define positions of the characters
-
 transform above_left:
     xanchor 0.0
     yanchor 1.0
     ypos 810
-    xpos 0
+    xpos 100
 
 transform above_right:
     xanchor 1.0
     yanchor 1.0
     ypos 810
-    xpos 1920
+    xpos 1820
 
 label at_home:
 
@@ -24,7 +23,7 @@ label at_home:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene hostel_room with fade
+    scene bg hostel_room with fade
 
     "\[alarm sound beeps\] You wake up in your hostel room. Oh right, summer break has officially ended."
 
@@ -81,16 +80,18 @@ label at_home:
         "It all comes back to you now. Your name is..."
 
         if is_dutch:
-            show dutch_avatar at above_left with moveinleft
+            show nb_avatar at above_left with moveinleft
             "Jip and today is your first day at Utrecht University."
             "While you have visited several universities on many open days, Utrecht is all you wanted."
+
+            show bg hostel_room_blurred
             j "{i}I'm thinking{\i}."
         else:
-            show international_avatar at above_left with moveinleft
+            show val at above_right with moveinright
             "Sam and today is your first day at Utrecht University."
             "After carefully researching options for studying abroad, Utrecht stood out for you."
 
-    scene hostel_lobby with Dissolve(0.5)
+    scene bg hostel_lobby with Dissolve(0.5)
 
     label .breakfast:
         menu:
@@ -121,5 +122,5 @@ label at_home:
         else:
             "Skipping breakfast saves time! But you put a snack in your bag to eat later."
 
-    scene hostel_outside with Dissolve(0.5)
+    scene bg hostel_outside with Dissolve(0.5)
     $send_to_file("choices.txt", "The total score is " + str(score) + "\n")
