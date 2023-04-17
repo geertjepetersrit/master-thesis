@@ -13,7 +13,7 @@ init python:
 label start:
 
     $score = 0
-    # Narrative intro
+#   $send_to_file("choices.txt", "The total score is " + str(score) + "\n")
 
     # Enter monologue mode
     centered """
@@ -28,10 +28,12 @@ label start:
     Characters and situations are purely fictional. Your choices affect the outcome of the story. Choose wisely.
 
     """
+    # Leave monologue mode
 
+    # Go to At Home scene
     call at_home
-
-    # TODO: add more scenes
 
     # This ends the game and returns to the main menu
     return
+
+# TODO: add blurry backgrounds when characters are talking

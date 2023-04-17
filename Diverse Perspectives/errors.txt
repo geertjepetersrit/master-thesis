@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 19: expected an indented block
-        else:
-         ^
-    
+File "game/travelling.rpy", line 147: expected statement.
+    c 
+      ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Apr 17 12:03:28 2023
+Mon Apr 17 19:45:24 2023
