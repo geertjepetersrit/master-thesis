@@ -145,6 +145,7 @@ label travelling:
                 scene bg bus_inside with Dissolve(0.5)
                 call ps_chad
 
+            # Switch back
             scene bg black with Dissolve(0.5)
 
             centered """

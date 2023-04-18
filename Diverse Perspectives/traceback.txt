@@ -3,40 +3,42 @@
 While running game code:
   File "game/script.rpy", line 33, in script call
     call at_home
-  File "game/at_home.rpy", line 134, in script call
+  File "game/at_home.rpy", line 103, in script call
     call travelling
-  File "game/travelling.rpy", line 60, in script call
-    call confrontation
-  File "game/script.rpy", line 33, in script call
-    call at_home
-  File "game/at_home.rpy", line 134, in script call
-    call travelling
-  File "game/travelling.rpy", line 60, in script call
-    call confrontation
-ScriptError: could not find label 'confrontation'.
+  File "game/travelling.rpy", line 62, in script call
+    call dilemma1
+  File "game/travelling.rpy", line 178, in script call
+    call uu_campus
+  File "game/uu_campus.rpy", line 207, in script
+    if !friends:
+SyntaxError: invalid syntax (game/uu_campus.rpy, line 207)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/script.rpy", line 33, in script call
     call at_home
-  File "game/at_home.rpy", line 134, in script call
+  File "game/at_home.rpy", line 103, in script call
     call travelling
-  File "game/travelling.rpy", line 60, in script call
-    call confrontation
-  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\ast.py", line 1705, in execute
-    rv = renpy.game.context().call(label, return_site=self.next.name)
-  File "game/script.rpy", line 33, in script call
-    call at_home
-  File "game/at_home.rpy", line 134, in script call
-    call travelling
-  File "game/travelling.rpy", line 60, in script call
-    call confrontation
-  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\script.py", line 927, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'confrontation'.
+  File "game/travelling.rpy", line 62, in script call
+    call dilemma1
+  File "game/travelling.rpy", line 178, in script call
+    call uu_campus
+  File "game/uu_campus.rpy", line 207, in script
+    if !friends:
+  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\ast.py", line 2115, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\python.py", line 1090, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\python.py", line 1027, in py_compile
+    raise e
+  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\python.py", line 979, in py_compile
+    raise orig_e
+  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\python.py", line 972, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/uu_campus.rpy, line 207)
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
 Diverse Perspectives 1.0
-Mon Apr 17 19:00:37 2023
+Tue Apr 18 16:38:00 2023

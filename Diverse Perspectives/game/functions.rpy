@@ -4,6 +4,7 @@
 define j = Character("Jip", color = "#0cfaf6")
 define s = Character("Sam", color = "#dc0cf7")
 define c = Character("Chad", color = "#83abdf")
+define carm = Character("Carmen", color = "#11ed35")
 
 # Define positions of the characters
 transform above_left:
@@ -26,6 +27,16 @@ label show_avatar:
         show male_avatar at above_left with moveinleft
     else:
         show nb_avatar at above_left with moveinleft
+
+    return
+
+label hide_avatar:
+    if gender == "female":
+        hide female_avatar
+    elif gender == "male":
+        hide male_avatar
+    else:
+        hide nb_avatar
 
     return
 
@@ -83,8 +94,10 @@ label dilemma2:
         "Yell at them and get angry.":
             $answer2 = "yell"
             $renpy.fix_rollback()
+            $score -= 1
         "Stop and ask them where they are going.":
             $answer2 = "stop"
             $renpy.fix_rollback()
+            $score += 1
 
     return

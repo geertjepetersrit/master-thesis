@@ -11,7 +11,6 @@ init python:
         return
 
 label start:
-
     $score = 0
 #   $send_to_file("choices.txt", "The total score is " + str(score) + "\n")
 

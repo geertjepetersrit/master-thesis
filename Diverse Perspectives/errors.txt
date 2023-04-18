@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label bike_path is defined twice, at File "game/uu_campus.rpy", line 8:
-    label bike_path:
-and File "game/uu_campus2.rpy", line 8:
-    label bike_path:
-
+File "game/uu_campus.rpy", line 195: expected statement.
+    j
+     ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Apr 18 14:55:02 2023
+Tue Apr 18 16:32:27 2023
