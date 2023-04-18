@@ -173,3 +173,5 @@ label travelling:
 
         Maybe you could use these new mind reading powers to your advantage… for the greater good, right?
         """
+
+        call uu_campus

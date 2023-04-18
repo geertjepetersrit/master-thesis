@@ -71,3 +71,20 @@ label convo_chad:
         c "No clue… at all."
 
     return
+
+# Choice options
+label dilemma2:
+    menu:
+        "What will you do?"
+
+        "Dodge them and pretend it didn’t happen.":
+            $answer2 = "dodge"
+            $renpy.fix_rollback()
+        "Yell at them and get angry.":
+            $answer2 = "yell"
+            $renpy.fix_rollback()
+        "Stop and ask them where they are going.":
+            $answer2 = "stop"
+            $renpy.fix_rollback()
+
+    return

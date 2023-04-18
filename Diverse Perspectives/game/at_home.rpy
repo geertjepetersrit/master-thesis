@@ -84,7 +84,7 @@ label at_home:
     # Trivial choice
     label .breakfast:
         menu:
-            "As you get dressed and prepare for the day, you think: \“What should I eat for breakfast?\” "
+            "As you get dressed and prepare for the day, you think: \“What should I eat for breakfast?\”"
 
             "Bread with {i}hagelslag{/i} (chocolate sprinkles)":
                 $breakfast = "hagelslag"
