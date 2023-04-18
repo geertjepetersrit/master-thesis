@@ -82,14 +82,14 @@ label uu_campus:
                     "\“What do you think about it?\”"
 
                     "I disagree.":
-                        $answer3 = "disagree"
+                        $answer3a = "disagree"
                         $renpy.fix_rollback()
                         $score += 1
                     "No opinion.":
-                        $answer3 = "no_opinion"
+                        $answer3a = "no_opinion"
                         $renpy.fix_rollback()
                     "I could see why they would see it that way.":
-                        $answer3 = "agree"
+                        $answer3a = "agree"
                         $renpy.fix_rollback()
 
                 if is_dutch:
@@ -97,7 +97,7 @@ label uu_campus:
                 else:
                     j "\“Yeah, me too.\”"
 
-                if answer3 == "disagree":
+                if answer3a == "disagree":
                     call hide_avatar
                     show carmen at above_left with moveinleft
                     if is_dutch:
@@ -108,7 +108,7 @@ label uu_campus:
                         "Before you know it, Jip meddles in the conversation."
                         j "\“You should respect somebody’s pronouns. Regardless of their presence and if you like them or not.\”"
                         j "\“If you’re unsure how to refer to them in your native language, you could ask what their pronouns are.\”"
-                elif answer3 == "no_opinion":
+                elif answer3a == "no_opinion":
                     "You both don’t pay further attention to the conversation and wait until they pass by."
                 else:
                     call hide_avatar
@@ -126,9 +126,9 @@ label uu_campus:
                 scene bg uithof_rainbow with Dissolve(0.5)
                 show carmen at above_left with moveinleft
 
-                if answer3 == "disagree":
+                if answer3a == "disagree":
                     carm "{i}\“I wasn’t talking to you, why are you interfering?!\”{/i}"
-                elif answer3 == "no_opinion":
+                elif answer3a == "no_opinion":
                     carm "{i}\“Nobody objects, so what I said must make sense, right?\”{/i}"
                 else:
                     carm "{i}\“Exactly, that’s what I mean! Why do people find it such a big deal anyway?\”{/i}"
@@ -142,10 +142,10 @@ label uu_campus:
                 """
 
                 scene bg uithof_rainbow with Dissolve(0.5)
-                if answer3 != "no_opinion":
+                if answer3a != "no_opinion":
                     "Before you can think further about it, Carmen says:"
                     show carmen at above_left with moveinleft
-                    if answer3 == "disagree":
+                    if answer3a == "disagree":
                         carm "\“I tried asking his pronouns once, but they just don’t stick with me. I can’t get used to it and I hardly find it the effort, since I rarely see that person.\”"
                         if is_dutch:
                             call show_npc
@@ -190,7 +190,7 @@ label uu_campus:
                 j "\“Me too! Want to go together someday?\”"
                 s "\“Sounds good! Do you like plants too?\”"
                 j "\“I actually like skateboarding more, but I heard there’s a butterfly garden too and I just have to see it.\”"
-                j "\“The Morpho menelaus is my favourite. It’s the blue butterfly.\”"
+                j "\“The {i}Morpho menelaus{/i} is my favourite. It’s the blue butterfly.\”"
                 s "\“Cool! \[points at the KBG door\] Let's go inside.\”"
             else:
                 s "\“Hey, have you been to the Botanical Gardens before?\”"
@@ -206,6 +206,199 @@ label uu_campus:
         "You go through the door and a sign says the Cosmos lecture hall is on the first floor."
         if not friends:
             label dilemma3B:
-                # enter leo
+                "In front of the stairs, someone approaches you. They seem to have some kind of paper in their hand."
+                show leo at above_right with moveinright
+                l "\“Hey, could I ask you something really quick?\”"
+                if is_dutch:
+                    j "\“Of course.\”"
+                    j "{i}\“I hope they don’t want to sell me some kind of newspaper subscription. I have a hard time saying ‘No’ to those things.\”{/i}"
+                else:
+                    s "\“Of course.\”"
+                    s "{i}I hope they don’t want to sell me some kind of newspaper subscription. I have a hard time saying ‘No’ to those things.{/i}"
+                l "\“I’m Leo from the Diversity & Inclusion Committee here at Utrecht University. Next month we want to raise awareness for transgender and non-binary people, as they are often misgendered or misunderstood.\”"
+                l "\“To estimate how to approach this campaign, I’m gauging the student’s feelings about this. Could I ask your opinion about this topic?\”"
 
+                # Consequential choice
+                menu:
+                    "\“What do you think of it?\”"
 
+                    "Support it.":
+                        $answer3b = "support"
+                        $renpy.fix_rollback()
+                        $score += 1
+                        if is_dutch:
+                            j "\“I think it’s a good idea. I think equipping people with more knowledge about the topic will definitely help. It’ll hopefully solve a lot of misunderstandings.\”"
+                        else:
+                            s "\“I think it’s a good idea. I think equipping people with more knowledge about the topic will definitely help. It’ll hopefully solve a lot of misunderstandings.\”"
+                    "No opinion.":
+                        $answer3b = "no_opinion"
+                        $renpy.fix_rollback()
+                        if is_dutch:
+                            j "\“To be honest, I don’t know, because it doesn’t cross my mind often.\”"
+                        else:
+                            s "\“To be honest, I don’t know, because it doesn’t cross my mind often.\”"
+                    "Be sceptical.":
+                        $answer3b = "sceptic"
+                        $renpy.fix_rollback()
+                        if is_dutch:
+                            j "\“On the one hand I think it’s good, but on the other hand, making people aware of their marginalised positions could have negative consequences, especially if it’s not in their power to change it.\”"
+                            l "\“That’s true, I haven’t looked at it that way.\”"
+                            l "\“We have to approach it very carefully, the last thing we want is any backlash.\”"
+                        else:
+                            s "\“On the one hand I think it’s good, but on the other hand, making people aware of their marginalised positions could have negative consequences, especially if it’s not in their power to change it.\”"
+                            l "\“That’s true, I haven’t looked at it that way.\”"
+                            l "\“We have to approach it very carefully, the last thing we want is any backlash.\”"
+
+                l "\“Thank you for your answer and your time!\”"
+                l "\“Have a nice day!\”"
+                if is_dutch:
+                    j "\“You too!\”"
+                else:
+                    s "\“You too!\”"
+
+    label at_spar:
+        scene bg spar_uni with Dissolve(0.5)
+        call show_avatar
+        "After climbing the stairs, a pink crocodile catches your eye. Uhm, the what?? Oh, it’s the mascot from the Spar University! You still have time for a drink."
+
+        # Trivial choice
+        label .choose_drink:
+            menu:
+                "What will you take?"
+
+                "A coffee":
+                    menu:
+                        "How do you like your coffee?"
+                        "Just black":
+                            $drink = "black_coffee"
+                            $renpy.fix_rollback()
+                        "With sugar and cream":
+                            $drink = "starbucks"
+                            $renpy.fix_rollback()
+                "A tea":
+                    menu:
+                        "Which tea flavour do you get?"
+                        "Earl grey":
+                            $drink = "earl_grey"
+                            $renpy.fix_rollback()
+                        "Melon":
+                            $drink = "melon"
+                            $renpy.fix_rollback()
+                            if friends:
+                                call show_npc
+                                if is_dutch:
+                                    s "\“Wait, you seriously like melon tea?\”"
+                                    j "\“Yes. You don’t?\”"
+                                    s "\“No… why would I drink something that tastes like warm fruit?\”"
+                                    j "\“Why not? It’s delicious, you should try it.\”"
+                                    s "\“No, thanks…\”"
+                                else:
+                                    j "\“Wait, you seriously like melon tea?\”"
+                                    s "\“Yes. You don’t?\”"
+                                    j "\“No… why would I drink something that tastes like warm fruit?\”"
+                                    s "\“Why not? It’s delicious, you should try it.\”"
+                                    j "\“No, thanks…\”"
+                "Nothing":
+                    $drink = "nothing"
+                    $renpy.fix_rollback()
+                    if is_dutch:
+                        j "{i} Way too overpriced.{/i}"
+                    else:
+                        s "{i} Way too overpriced.{/i}"
+                    "Next time you’ll just bring your own thermos."
+
+    label dilemma4:
+        scene bg kbg_door with Dissolve(0.5)
+        call show_avatar
+        show matilda at above_right with moveinright
+        "While you are walking in the building, you see a girl who’s in a wheelchair."
+        "Matilda’s struggling to open the door, but she hasn’t asked for any help."
+
+        # Consequential choice
+        menu:
+            "What will you do?"
+
+            "Pretend you don’t see her":
+                $renpy.fix_rollback()
+                $score -= 1
+                $answer4 = "ignore"
+                "You pretend not to see Matilda’s struggle."
+                "When she’s looking at you, you quickly look in another direction. This isn’t your finest moment."
+            "Immediately help her":
+                $renpy.fix_rollback()
+                $answer4 = "help"
+                "You rush towards the door to hold it open."
+                "Matilda looks at you with slight confusion, but quickly says:"
+                m "\“I almost got it, but thanks!\”"
+            "Ask if she needs any help":
+                $renpy.fix_rollback()
+                $score *= 2 # Double amount of points
+                $answer4 = "ask"
+                if is_dutch:
+                    j "\“Hey, can I help you with that?\”"
+                    m "\“Actually yes! I didn’t want to ask anyone, thank my ego for that. But the door is too heavy.\”"
+
+        if friends:
+            # Perspective switch
+            scene bg black with Dissolve(0.5)
+            centered "Another perspective switch! What is she thinking?"
+            scene bg kbg_door with Dissolve(0.5)
+            show matilda at above_left with moveinleft
+            if answer4 == "ignore":
+                m "{i}\“Why are you pretending not to see me? I can clearly see you. And now you look away. How rude.\”{/i}"
+            elif answer4 == "help":
+                m "{i}\“Maybe I could’ve done it myself, maybe not.\”{/i}"
+                m "{i}\“It was kind that that person helped me, but I’m not as helpless as I may look.\”{/i}"
+            else:
+                m "{i}\“Oh, wow this actually saves me a lot of effort, how nice! I’m really glad you helped me, but asked first.\”{/i}"
+                m "{i}\“Some people just automatically assume I can’t do anything, but that’s not the case.\”{/i}"
+
+            # Switch back
+            scene bg black with Dissolve(0.5)
+            centered "Within the blink of an eye you’re back in your own body."
+            scene bg kbg_door with Dissolve(0.5)
+            call show_avatar
+            show matilda at above_right with moveinright
+
+        if answer4 != "ignore":
+            "You wonder why Matilda is in a wheelchair."
+            menu:
+                "Will you ask?"
+
+                "No":
+                    $renpy.fix_rollback()
+                    "Matilda disappears and you continue your way towards the lecture room."
+                    call lecture_room
+                    return
+                "Yes":
+                    $renpy.fix_rollback()
+                    if is_dutch:
+                        j "\“Hey, I hope you don’t mind that I ask this, but how did you end up in a wheelchair?\”"
+                        m "\“No, it’s fine. I’ve been in a car accident that resulted in a spinal cord injury. So my legs and feet are paralysed.\”"
+                        j "\“Oh… I’m very sorry to hear that.\”"
+                        m "\“Thank you, but don’t be. It wasn’t your fault, right? \[laughs\]\”"
+                        m "\“It also happened so long ago… I can handle myself in this wheelchair, but I still miss the things I did before the accident.\”"
+                        j "\“What were those?\”"
+                        m "\“Well, I used to take long walks through the parks. Utrecht has so many beautiful parks, but the {i}Máximapark{/i} is my absolute favourite.\”"
+                        m "\“I can still visit the park in my wheelchair, but it’s just not the same.\”"
+                        j "\“I see… I don’t know what else to say…\”"
+                        m "\“It’s OK, talking about the {i}Máximapark{/i} brings up some good memories. I’m glad you asked, usually people just see me as kinda helpless and act awkward.\”"
+                        m "\“I got to go now, but it was nice talking to you. Bye bye!\”"
+                        j "\“I have to go too. See you later!\”"
+                    else:
+                        s "\“Hey, I hope you don’t mind that I ask this, but how did you end up in a wheelchair?\”"
+                        m "\“No, it’s fine. I’ve been in a car accident that resulted in a spinal cord injury. So my legs and feet are paralysed.\”"
+                        s "\“Oh… I’m very sorry to hear that.\”"
+                        m "\“Thank you, but don’t be. It wasn’t your fault, right? \[laughs\]\”"
+                        m "\“It also happened so long ago… I can handle myself in this wheelchair, but I still miss the things I did before the accident.\”"
+                        s "\“What were those?\”"
+                        m "\“Well, I used to take long walks through the parks. Utrecht has so many beautiful parks, but the {i}Máximapark{/i} is my absolute favourite.\”"
+                        m "\“I can still visit the park in my wheelchair, but it’s just not the same.\”"
+                        s "\“I see… I don’t know what else to say…\”"
+                        m "\“It’s OK, talking about the {i}Máximapark{/i} brings up some good memories. I’m glad you asked, usually people just see me as kinda helpless and act awkward.\”"
+                        m "\“I got to go now, but it was nice talking to you. Bye bye!\”"
+                        s "\“I have to go too. See you later!\”"
+
+    "Matilda disappears and you continue your way towards the lecture room."
+
+    call lecture_room

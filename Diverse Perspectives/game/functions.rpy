@@ -5,6 +5,9 @@ define j = Character("Jip", color = "#0cfaf6")
 define s = Character("Sam", color = "#dc0cf7")
 define c = Character("Chad", color = "#83abdf")
 define carm = Character("Carmen", color = "#11ed35")
+define l = Character("Leo", color = "#faf211")
+define m = Character("Matilda", color = "#fa9d07")
+define dr = Character("dr. Caulfield", color = "#6ba2fa")
 
 # Define positions of the characters
 transform above_left:

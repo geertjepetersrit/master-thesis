@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/uu_campus.rpy", line 195: expected statement.
-    j
-     ^
+File "game/uu_campus.rpy", line 363: if statement expects a non-empty block.
+    if answer4 == "ignore":
+                           ^
+
+File "game/uu_campus.rpy", line 365: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Apr 18 16:32:27 2023
+Tue Apr 18 18:00:30 2023
