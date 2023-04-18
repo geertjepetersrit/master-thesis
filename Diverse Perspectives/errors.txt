@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/uu_campus.rpy", line 30: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-                    s "\“Watch out for yourself!”\"
+The label bike_path is defined twice, at File "game/uu_campus.rpy", line 8:
+    label bike_path:
+and File "game/uu_campus2.rpy", line 8:
+    label bike_path:
+
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Apr 18 11:00:20 2023
+Tue Apr 18 14:55:02 2023
