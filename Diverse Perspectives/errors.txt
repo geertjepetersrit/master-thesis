@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/uu_campus.rpy", line 363: if statement expects a non-empty block.
-    if answer4 == "ignore":
-                           ^
-
-File "game/uu_campus.rpy", line 365: expected statement.
-    else:
+File "game/functions.rpy", line 116: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "No"
         ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Apr 18 18:00:30 2023
+Wed Apr 19 18:46:54 2023

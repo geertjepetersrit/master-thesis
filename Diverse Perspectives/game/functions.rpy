@@ -8,6 +8,7 @@ define carm = Character("Carmen", color = "#11ed35")
 define l = Character("Leo", color = "#faf211")
 define m = Character("Matilda", color = "#fa9d07")
 define dr = Character("dr. Caulfield", color = "#6ba2fa")
+define chloe = Character("Chloe", color = "#266fff")
 
 # Define positions of the characters
 transform above_left:
@@ -102,5 +103,18 @@ label dilemma2:
             $answer2 = "stop"
             $renpy.fix_rollback()
             $score += 1
+
+    return
+
+label phone_nr:
+    menu:
+        "Will you give your phone number?"
+
+        "Yes":
+            $give_nr = True
+            $renpy.fix_rollback()
+        "No":
+            $give_nr = False
+            $renpy.fix_rollback()
 
     return

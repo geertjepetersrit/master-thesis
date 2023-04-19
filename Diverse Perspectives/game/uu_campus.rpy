@@ -79,7 +79,7 @@ label uu_campus:
 
                 # Consequential choice
                 menu:
-                    "\“What do you think about it?\”"
+                    "\“What do you think about what Carmen said?\”"
 
                     "I disagree.":
                         $answer3a = "disagree"
