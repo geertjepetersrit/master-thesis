@@ -24,7 +24,7 @@ label start:
     Travelling back and forth is no option, as your hometown is too far away. Finding a room is not easy peasy lemon
     squeezy...
 
-    Characters and situations are purely fictional. Your choices affect the outcome of the story. Choose wisely.
+    Characters and situations are purely fictional. Your choices affect the outcome of the story. \nChoose wisely.
 
     """
     # Leave monologue mode

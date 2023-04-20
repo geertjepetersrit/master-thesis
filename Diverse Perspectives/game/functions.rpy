@@ -11,6 +11,7 @@ define dr = Character("dr. Caulfield", color = "#6ba2fa")
 define chloe = Character("Chloe", color = "#266fff")
 define v = Character("Val", color = "#f75c7d")
 define sh = Character("Shiro", color = "#ffffff")
+define st = Character("Steph", color = "#18f5b3")
 
 # Define positions of the characters
 transform above_left:
@@ -63,6 +64,13 @@ label hide_npc:
         hide nb_avatar
     else:
         hide female_avatar
+
+    return
+
+label show_all:
+    call show_avatar
+    if friends:
+        call show_npc
 
     return
 
@@ -184,5 +192,65 @@ label dilemma7_ask:
     sh "\“Thank you for asking though. I realise now that I just should tell my friends to stop because it makes me uncomfortable.\”"
     sh "\“It’s so weird that it is taken for granted that people think it’s appropriate to do it just because someone is Asian…\”"
     sh "\“But besides that, my friends are actually nice people, although just a bit oblivious.\”"
+
+    return
+
+label bonus_dilemma:
+    if friends:
+        call hide_npc
+    show steph at above_right with moveinright
+    st "\“In case you’re wondering, the Dom is actually 112 metres and 32 centimetres! To get to the top, you have to take 465 steps.\”"
+    st "\“People even organise stair climbing matches. I like random facts, that's why I know. People find me a bit peculiar, and they might be right.\”"
+    st "\“I’m Steph, by the way.\”"
+    if is_dutch:
+        j "“I’m Jip. And why is that so?”"
+    else:
+        s "“I’m Sam. And why is that so?”"
+    st "\“Just between me and you, I’m diagnosed with autism, but I don’t know if I want to tell my friends about this.\”"
+    st "\“I’m afraid I will be judged differently when I do. I don’t mind telling strangers though.\”"
+
+    # Consequential choice
+    menu:
+        "What would you say to Steph?"
+
+        "Play it down":
+            $bonus_answer = "downplay"
+            $renpy.fix_rollback()
+            if is_dutch:
+                j "\“Everybody has some autistic traits and that it’s not a big deal in telling people.\”"
+            else:
+                s "\“Everybody has some autistic traits and that it’s not a big deal in telling people.\”"
+            st "\“You’re probably right. But I’m still not sure if I’m ready for that.\”"
+        "Thank and support":
+            $bonus_answer = "thank_support"
+            $renpy.fix_rollback()
+            $score += 1
+            if is_dutch:
+                j "\“I can’t make that choice for you, but I support you in whatever decision you take. Thanks a lot for sharing that with me.\”"
+            else:
+                s "\“I can’t make that choice for you, but I support you in whatever decision you take. Thanks a lot for sharing that with me.\”"
+            st "\“Thank you.\”"
+
+    if friends:
+        # Perspective switch
+        scene bg black with Dissolve(0.5)
+        centered "Oh, it’s happening again! What’s on their mind?"
+        scene bg dom_square with Dissolve(0.5)
+        show steph at above_left with moveinleft
+        if bonus_answer == "downplay":
+            st "{i}\“Why did I ask a random stranger for advice? Besides that, you probably think I’m blowing it up, but that’s not the case. I’m really struggling with it.\”{/i}"
+        else:
+            st "{i}\“They’re right, it’s my own decision to make. I guess I just needed to feel understood.\”{/i}"
+
+        # Switch back
+        scene bg black with Dissolve(0.5)
+        centered "Back to hearing only your own thoughts."
+        scene bg dom_square with Dissolve(0.5)
+        call show_avatar
+        show steph at above_right with moveinright
+
+    "Steph smiles and walks away."
+    hide steph
+    call show_all
 
     return

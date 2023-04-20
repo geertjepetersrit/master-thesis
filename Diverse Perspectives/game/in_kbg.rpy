@@ -1,17 +1,17 @@
 label in_kbg:
     scene bg kbg_inside with Dissolve(0.5)
-    call show_avatar
+    call show_all
     "Class has ended and you want to explore the city centre."
-    if friends:
-        call show_npc
-        if is_dutch:
+    if is_dutch:
+        "You’d also like to visit the skate ramp in the {i}Griftpark{/i}. The pictures on the internet looked really cool."
+        "But you don’t have your board with you right now. Maybe later this week?"
+        if friends:
             "Sam goes to the centre with you."
-            "You’d also like to visit the skate ramp in the {i}Griftpark{/i}. The pictures on the internet looked really cool."
-            "But you don’t have your board with you right now. Maybe later this week?"
-        else:
+    else:
+        "You’d also like to visit this mysterious shop called {i}BLACKFISH{/i}. The pictures on the internet looked really cool and you heard that they give away free stickers."
+        "But they’re closed today. Maybe later this week?"
+        if friends:
             "Jip goes to the centre with you."
-            "You’d also like to visit this mysterious shop called {i}BLACKFISH{/i}. The pictures on the internet looked really cool and you heard that they give away free stickers."
-            "But they’re closed today. Maybe later this week?"
 
     "As you walk out of the lecture room, you see that the exit of the building is on the ground floor."
 
