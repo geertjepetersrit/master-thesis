@@ -37,29 +37,13 @@ label uu_campus:
                 s "\“Don’t worry about it! I guess we were both not paying attention.\”"
                 j "\“Yeah… where are you going by the way?\”"
                 s "\“Some kind of building called KBG. I’m not sure where it is, I just arrived in the Netherlands. Today is my first day on campus.\”"
-                j "\“Me too! I still need to get familiar with Utrecht. It would be easier if I already had a room here, but that’s not the case.\”"
-                s "\“Same, but hopefully I can move to Utrecht soon. Tonight, I’m invited to this {i}hospi{/i}, so I might have a chance.\”"
-                j "\“Really? I’m invited to a {i}hospi{/i} too! Wait, I think it’s the same one!\”"
-                s "\“Then you probably also know they prefer one international student and one Dutch student who are already close.\”"
-                j "\“True. But wait, that could be us, right?\”"
-                s "\“Yeah, you’re right! We can become friends to improve our chances?\”"
-                j "\“Sure! Sounds like a good plan.\”"
-                s "\“I’m Sam by the way. And what’s your name?\”"
-                j "\“Jip.\”"
+                call convo_befriend
             else:
                 s "\“I’m so sorry!” I didn’t see you, I swear!\”"
                 j "\“Don’t worry about it! I guess we were both not paying attention.\”"
                 s "\“Yeah… where are you going by the way?\”"
-                j "\“Some kind of building called KBG. I’m not sure where it is. Today is my first day on campus.\”"
-                s "\“Me too! I still need to get familiar with Utrecht. It would be easier if I already had a room here, but that’s not the case.\”"
-                j "\“Same, but hopefully I can move to Utrecht soon. Tonight, I’m invited to this {i}hospi{/i}, so I might have a chance.\”"
-                s "\“Really? I’m invited to a {i}hospi{/i} too! Wait, I think it’s the same one!\”"
-                j "\“Then you probably also know they prefer one international student and one Dutch student who are already close.\”"
-                s "\“True. But wait, that could be us, right?\”"
-                j "\“Yeah, you’re right! We can become friends to improve our chances?\”"
-                s "\“Sure! Sounds like a good plan.\”"
-                j "\“I’m Jip by the way. And what’s your name?\”"
-                s "\“Sam.\”"
+                j "\“Some kind of building called KBG. I’m not sure where it is, today is my first day on campus.”"
+                call convo_befriend
 
             # Avatar and NPC become friends
             label dilemma3A:

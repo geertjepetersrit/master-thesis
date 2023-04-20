@@ -9,6 +9,8 @@ define l = Character("Leo", color = "#faf211")
 define m = Character("Matilda", color = "#fa9d07")
 define dr = Character("dr. Caulfield", color = "#6ba2fa")
 define chloe = Character("Chloe", color = "#266fff")
+define v = Character("Val", color = "#f75c7d")
+define sh = Character("Shiro", color = "#ffffff")
 
 # Define positions of the characters
 transform above_left:
@@ -72,6 +74,7 @@ label ps_chad:
 
     return
 
+# Conversations
 label convo_chad:
     show chad at above_right with moveinright
     if is_dutch:
@@ -84,6 +87,30 @@ label convo_chad:
         c "Yeah, I noticed it too…"
         s "Do you have any idea what happened?"
         c "No clue… at all."
+
+    return
+
+label convo_befriend:
+    if is_dutch:
+        j "\“Me too! I still need to get familiar with Utrecht. It would be easier if I already had a room here, but that’s not the case.\”"
+        s "\“Same, but hopefully I can move to Utrecht soon. Tonight, I’m invited to this {i}hospi{/i}, so I might have a chance.\”"
+        j "\“Really? I’m invited to a {i}hospi{/i} too! Wait, I think it’s the same one!\”"
+        s "\“Then you probably also know they prefer one international student and one Dutch student who are already close.\”"
+        j "\“True. But wait, that could be us, right?\”"
+        s "\“Yeah, you’re right! We can become friends to improve our chances?\”"
+        j "\“Sure! Sounds like a good plan.\”"
+        s "\“I’m Sam by the way. And what’s your name?\”"
+        j "\“Jip.\”"
+    else:
+        s "\“Me too! I still need to get familiar with Utrecht. It would be easier if I already had a room here, but that’s not the case.\”"
+        j "\“Same, but hopefully I can move to Utrecht soon. Tonight, I’m invited to this {i}hospi{/i}, so I might have a chance.\”"
+        s "\“Really? I’m invited to a {i}hospi{/i} too! Wait, I think it’s the same one!\”"
+        j "\“Then you probably also know they prefer one international student and one Dutch student who are already close.\”"
+        s "\“True. But wait, that could be us, right?\”"
+        j "\“Yeah, you’re right! We can become friends to improve our chances?\”"
+        s "\“Sure! Sounds like a good plan.\”"
+        j "\“I’m Jip by the way. And what’s your name?\”"
+        s "\“Sam.\”"
 
     return
 
@@ -116,5 +143,46 @@ label phone_nr:
         "No":
             $give_nr = False
             $renpy.fix_rollback()
+
+    return
+
+label dilemma6_no:
+    $answer6 = "no"
+    $renpy.fix_rollback()
+    $score -= 1
+    "You refuse politely and you decide to stretch the truth a little."
+    if is_dutch:
+        j "\“Sorry, but our group is already full.\”"
+    else:
+        s "\“Sorry, but our group is already full.\”"
+    v "\“OK, I understand.\”"
+
+    return
+
+label dilemma6_yes:
+    $answer6 = "yes"
+    $renpy.fix_rollback()
+    $score += 1
+    "The more diverse backgrounds, the better. You could probably learn a thing or two."
+    if is_dutch:
+        j "\“Of course!\”"
+    else:
+        s "\“Of course!\”"
+    v "\““Thank you!”\”"
+
+    return
+
+label dilemma7_ask:
+    $answer7 = "ask"
+    $renpy.fix_rollback()
+    $score += 1
+    if is_dutch:
+        j "\“Hey, are you OK?\“"
+    else:
+        s "\“Hey, are you OK?\“"
+    sh "\“To be honest, no. Not at all.\”"
+    sh "\“Thank you for asking though. I realise now that I just should tell my friends to stop because it makes me uncomfortable.\”"
+    sh "\“It’s so weird that it is taken for granted that people think it’s appropriate to do it just because someone is Asian…\”"
+    sh "\“But besides that, my friends are actually nice people, although just a bit oblivious.\”"
 
     return

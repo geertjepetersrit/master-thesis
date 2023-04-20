@@ -25,7 +25,7 @@ label lecture_room:
             call show_npc
             if is_dutch:
                 s "\“I read that there are more than 35,000 students in total, so I bet around 8,000 of them are international.\”"
-                s "\“Wait, let's make it a real bet. If your guess is the closest...\”"
+                s "\“Wait, let's make it a real bet. If your guess is the closest…\”"
                 if drink == "melon":
                     s "\“I’ll try a cup of that ‘tasty’ melon tea you had earlier.\”"
                 else:
@@ -34,7 +34,7 @@ label lecture_room:
                 j "\“Deal.\”"
             else:
                 j "\“I read that there are more than 35,000 students in total, so I bet around 8,000 of them are international.\”"
-                j "\“Wait, let's make it a real bet. If your guess is the closest...\”"
+                j "\“Wait, let's make it a real bet. If your guess is the closest…\”"
                 if drink == "melon":
                     j "\“I’ll try a cup of that ‘tasty’ melon tea you had earlier.\”"
                 else:
@@ -230,3 +230,87 @@ label lecture_room:
             "You team up with Sam. It’s nice to have at least one familiar face in your group."
         else:
             "You team up with Jip. It’s nice to have at least one familiar face in your group."
+
+    label dilemma6:
+        "Someone approaches you."
+        show val at above_right with moveinright
+        v "\“Hey, I’m Val. I studied at the {i}HU{/i} (Hogeschool Utrecht, which is the university of applied sciences) first.\”"
+        v "\“I don’t know anyone here. Could I join your group?\”"
+
+        # Consequential choice
+        menu:
+            "What is your response?"
+
+            "Sorry, but no.":
+                call dilemma6_no
+            "Let me think about it.":
+                $answer6 = "maybe"
+                $renpy.fix_rollback()
+                "You are not sure yet."
+                if is_dutch:
+                    j "\“Wait, let me check with this other person real quick.\”"
+                else:
+                    s "\“Wait, let me check with this other person real quick.\”"
+                v "\“OK, please let me know later.\”"
+            "Sure!":
+                call dilemma6_yes
+
+        if friends:
+            # Perspective switch
+            scene bg black with Dissolve(0.5)
+            centered "Poof! Now you’re in Val’s head!"
+            scene bg cosmos_lecture with Dissolve(0.5)
+            show val at above_left with moveinleft
+            if answer6 == "no":
+                v "{i}\“Actually, I don’t understand it at all. I can’t shake the feeling that people look down on me just because I didn’t do university…\”{/i}"
+            elif answer6 == "maybe":
+                v "{i}\“Maybe I shouldn’t have mentioned my previous education. It seems to put me at a disadvantage.\”{/i}"
+            else:
+                v "{i}\“That went well. I’m glad I found a group so quickly.\”{/i}"
+
+            # Switch back
+            scene bg black with Dissolve(0.5)
+            centered "Reverse poof! Now you’re back to being your old self."
+            scene bg cosmos_lecture with Dissolve(0.5)
+            call show_avatar
+            show val at above_right with moveinright
+            "Val goes back to her seat, as the lecture is almost over."
+            hide val
+
+        # Consequential choice, second chance
+        if answer6 == "maybe":
+            if not friends:
+                scene bg black with Dissolve(0.5)
+                centered "A short moment later…"
+                scene bg cosmos_lecture with Dissolve(0.5)
+                call show_avatar
+                show val at above_right with moveinright
+
+            "Val approaches you again."
+            v "\“Hey, so have you made up your mind?\”"
+            menu:
+                "Can I join your group?"
+
+                "Sorry, but no.":
+                    call dilemma6_no
+                "Sure!":
+                    call dilemma6_yes
+
+        # Second chance to befriend NPC if player has accepted Val and not gotten angry in Dilemma #2
+        if not friends and answer6 == "yes" and answer2 != "yell":
+            hide val
+            call show_npc
+            $friends = True
+            "Another student approaches you."
+            if is_dutch:
+                s "\“Can I also join your group?\”"
+                s "\“I just arrived in the Netherlands. Today is my first day on campus.\”"
+                j "\“Of course!\”"
+                call convo_befriend
+            else:
+                j "\“Can I also join your group?\”"
+                j "\“Today is my first day on campus.\”"
+                s "\“Of course!\”"
+                call convo_befriend
+
+    call in_kbg

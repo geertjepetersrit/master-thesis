@@ -1,20 +1,20 @@
-Wed Apr 19 16:47:18 2023
+Thu Apr 20 11:21:29 2023
 Windows-10-10.0.22621
 Ren'Py 8.0.3.22090809
  
 
-Bootstrap to the start of init.init took 0.06s
+Bootstrap to the start of init.init took 0.08s
 Early init took 0.00s
-Loader init took 0.08s
-Loading error handling took 0.05s
-Loading script took 2.44s
-Loading save slot metadata. took 0.03s
+Loader init took 0.06s
+Loading error handling took 0.06s
+Loading script took 2.66s
+Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Set script version to: None (alternate path)
- - Init at launcher/game/download.rpyc:22 took 0.31251 s.
- - Init at launcher/game/installer.rpyc:6 took 1.07886 s.
-Running init code took 2.30s
-Loading analysis data took 0.05s
+ - Init at launcher/game/download.rpyc:22 took 0.28127 s.
+ - Init at launcher/game/installer.rpyc:6 took 0.98497 s.
+Running init code took 2.16s
+Loading analysis data took 0.06s
 Analyze and compile ATL took 0.02s
 Index archives took 0.00s
 Dump and make backups. took 0.00s
@@ -36,7 +36,7 @@ Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.55s
+Interface start took 0.47s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)

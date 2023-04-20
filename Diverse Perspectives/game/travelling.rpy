@@ -67,7 +67,7 @@ label travelling:
     label dilemma1:
         "You hear someone joking about ethnicities by using a derogatory term."
         show chad at above_right with moveinright
-        c "Hehe!"
+        c "\“Hehe, of course those {i}tacoheads{/i} take as much free food samples as possible.\”"
         hide chad
         call show_npc
         if is_dutch:

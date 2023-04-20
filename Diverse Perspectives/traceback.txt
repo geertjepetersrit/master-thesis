@@ -5,13 +5,15 @@ While running game code:
     call at_home
   File "game/at_home.rpy", line 103, in script call
     call travelling
-  File "game/travelling.rpy", line 62, in script call
+  File "game/travelling.rpy", line 56, in script call
     call dilemma1
   File "game/travelling.rpy", line 178, in script call
     call uu_campus
-  File "game/uu_campus.rpy", line 393, in script
-    m "\“Thank you, but don’t be. It wasn’t your fault, right? [laughs]\”"
-KeyError: 'laughs'
+  File "game/uu_campus.rpy", line 371, in script call
+    call lecture_room
+  File "game/lecture_room.rpy", line 269, in script
+    val "{i}\“That went well. I’m glad I found a group so quickly.\”{/i}"
+Exception: Sayer 'val' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -20,33 +22,21 @@ Full traceback:
     call at_home
   File "game/at_home.rpy", line 103, in script call
     call travelling
-  File "game/travelling.rpy", line 62, in script call
+  File "game/travelling.rpy", line 56, in script call
     call dilemma1
   File "game/travelling.rpy", line 178, in script call
     call uu_campus
-  File "game/uu_campus.rpy", line 393, in script
-    m "\“Thank you, but don’t be. It wasn’t your fault, right? [laughs]\”"
-  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\ast.py", line 921, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\exports.py", line 1373, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\character.py", line 1253, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\character.py", line 1172, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\character.py", line 1152, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\substitutions.py", line 278, in substitute
-    s = formatter.vformat(s, (), kwargs) # type: ignore
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 205, in _vformat
-  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\substitutions.py", line 168, in get_field
-    obj, arg_used = super(Formatter, self).get_field(field_name, args, kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 270, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 227, in get_value
-KeyError: 'laughs'
+  File "game/uu_campus.rpy", line 371, in script call
+    call lecture_room
+  File "game/lecture_room.rpy", line 269, in script
+    val "{i}\“That went well. I’m glad I found a group so quickly.\”{/i}"
+  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\ast.py", line 881, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\ast.py", line 774, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'val' is not defined.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
 Diverse Perspectives 1.0
-Tue Apr 18 18:06:55 2023
+Thu Apr 20 11:59:10 2023
