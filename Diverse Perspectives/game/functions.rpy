@@ -254,3 +254,13 @@ label bonus_dilemma:
     call show_all
 
     return
+
+label dilemma10_disagree:
+    if is_dutch:
+        s "\“Well, I still agree to disagree. But that’s what we're friends for.\”"
+        j "\“Yep.\”"
+    else:
+        j "\“Well, I still agree to disagree. But that’s what we're friends for.\”"
+        s "\“Yep.\”"
+
+    return

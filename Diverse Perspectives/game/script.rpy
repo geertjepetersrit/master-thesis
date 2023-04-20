@@ -21,10 +21,10 @@ label start:
 
     While you currently stay in a hostel, you’re in desperate need for something more permanent.
 
-    Travelling back and forth is no option, as your hometown is too far away. Finding a room is not easy peasy lemon
+    Travelling back and forth is no option, as your hometown is too far away. \n\nFinding a room is not easy peasy lemon
     squeezy...
 
-    Characters and situations are purely fictional. Your choices affect the outcome of the story. \nChoose wisely.
+    Characters and situations are purely fictional. \n\nYour choices affect the outcome of the story. \n\nChoose wisely.
 
     """
     # Leave monologue mode
