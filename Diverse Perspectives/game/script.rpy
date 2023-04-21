@@ -36,3 +36,5 @@ label start:
     return
 
 # TODO: add blurry backgrounds when characters are talking
+# TODO: save player choices in .txt file
+# TODO: copy project for version B

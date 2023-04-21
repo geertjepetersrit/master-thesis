@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/travelling.rpy", line 78: end of line expected.
-    call hide_npc with Dissolve(0.5)
-                  ^
+File "game/city_centre.rpy", line 76: expected ':' not found.
+    label terrace_drink
+                       ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Fri Apr 21 12:55:17 2023
+Fri Apr 21 15:17:21 2023

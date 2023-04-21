@@ -11,49 +11,18 @@ label at_home:
     "\[alarm sound beeps\] You wake up and look at your phone."
 
     # Trivial choice
-    label .alarm:
-        menu:
-            "It’s 8:30 AM, maybe 5 more minutes?"
-
-            "Snooze":
-                $renpy.fix_rollback()
-                "You hit the snooze button… zzz …"
-                "But 5 minutes later, the ungodly sound wakes you again."
-            "Get up":
-                $renpy.fix_rollback()
-
+    call alarm
 
     "You stretch your arms and sit up straight in your bed. What day is it?"
     "Oh right, It’s Monday, which means that the summer break has officially ended. Sad."
 
     # Trivial choice
-    label .gender:
-        menu:
-            "You look around in your hostel room and ask yourself: \“Who do I want to be?\” "
-
-            "Female":
-                $gender = "female"
-                $renpy.fix_rollback()
-            "Male":
-                $gender = "male"
-                $renpy.fix_rollback()
-            "Non-binary":
-                $gender = "nb"
-                $renpy.fix_rollback()
+    call gender
 
     "Then you try to remember more."
 
     # Trivial choice
-    label .country:
-        menu:
-            "A question pops up in your head: \“What country am I from?\” "
-
-            "the Netherlands":
-                $is_dutch = True
-                $renpy.fix_rollback()
-            "Abroad":
-                $is_dutch = False
-                $renpy.fix_rollback()
+    call country
 
     "It all comes back to you now. Your name is..."
 
@@ -82,22 +51,7 @@ label at_home:
     call show_avatar
 
     # Trivial choice
-    label .breakfast:
-        menu:
-            "As you get dressed and prepare for the day, you think: \“What should I eat for breakfast?\”"
-
-            "Bread with {i}hagelslag{/i} (chocolate sprinkles)":
-                $breakfast = "hagelslag"
-                $renpy.fix_rollback()
-                "Maybe you’ll even add a dot of peanut butter for the sweet tooth. You actually never tried it before, but you’ve heard it’s yummy."
-            "Yoghurt with fruit and muesli":
-                $breakfast = "yoghurt"
-                $renpy.fix_rollback()
-                "You slice an apple and a banana and put it in a bowl. Then you add the muesli on top. {i}Smakelijk!{\i}"
-            "Nothing":
-                $breakfast = "nothing"
-                $renpy.fix_rollback()
-                "Skipping breakfast saves time! But you put a snack in your bag to eat later. Lion candy bars are your favourite."
+    call breakfast
 
     # Go to Travelling scene
     call travelling
