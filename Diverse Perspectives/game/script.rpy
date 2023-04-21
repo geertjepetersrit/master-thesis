@@ -12,7 +12,8 @@ init python:
 
 label start:
     $score = 0
-#   $send_to_file("choices.txt", "The total score is " + str(score) + "\n")
+    $id = renpy.input("What is your participant ID?", allow="0123456789")
+    $send_to_file("choices.txt", "\n\n---\n\nPlayer " + str(id))
 
     # Enter monologue mode
     centered """
@@ -32,9 +33,11 @@ label start:
     # Go to At Home scene
     call at_home
 
+    # Write down the total score in a .txt file
+    $send_to_file("choices.txt", "\nThe total score is " + str(score))
+
     # This ends the game and returns to the main menu
     return
 
 # TODO: add blurry backgrounds when characters are talking
-# TODO: save player choices in .txt file
 # TODO: copy project for version B

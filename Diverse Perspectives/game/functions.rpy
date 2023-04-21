@@ -104,6 +104,7 @@ label dilemma6_no:
     $answer6 = "no"
     $renpy.fix_rollback()
     $score -= 1
+    $send_to_file("choices.txt", "\nDilemma 6: " + answer6)
     "You refuse politely and you decide to stretch the truth a little."
     if is_dutch:
         j "\“Sorry, but our group is already full.\”"
@@ -117,6 +118,7 @@ label dilemma6_yes:
     $answer6 = "yes"
     $renpy.fix_rollback()
     $score += 1
+    $send_to_file("choices.txt", "\nDilemma 6: " + answer6)
     "The more diverse backgrounds, the better. You could probably learn a thing or two."
     if is_dutch:
         j "\“Of course!\”"
@@ -130,6 +132,7 @@ label dilemma7_ask:
     $answer7 = "ask"
     $renpy.fix_rollback()
     $score += 1
+    $send_to_file("choices.txt", "\nDilemma 7: " + answer7)
     if is_dutch:
         j "\“Hey, are you OK?\“"
     else:
