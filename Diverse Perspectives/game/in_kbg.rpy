@@ -84,7 +84,8 @@ label in_kbg:
                     "Ask if Shiro is OK":
                         call dilemma7_ask
 
-        hide shiro
+        "Shiro walks away."
+        hide shiro with Dissolve(0.5)
 
     label kingsday:
         if is_dutch:
@@ -101,7 +102,7 @@ label in_kbg:
             s "\“Why do Dutch people have a thing for orange stuff? And especially during some kind of celebration day? I don’t get it.\”"
             j "\[laughs\] \“Oh, that’s because on the 27th of April, we celebrate the King’s birthday. And the word ‘orange’ is actually part of the surname from the royal bloodline, so that’s why everything is orange.\”"
             s "\“Ah, makes sense.\”"
-            j "\“n Utrecht, they take {i}Kingsday{i} very seriously. I mean, the celebrations already start at 6 PM the evening before the 27th and take exactly 24 hours.\”"
+            j "\“In Utrecht, they take {i}Kingsday{/i} very seriously. I mean, the celebrations already start at 6 PM the evening before the 27th and take exactly 24 hours.\”"
             j "\“I recommend visiting the flea market, people sell so much stuff and sometimes you find hidden gems. Oh, and eating a {i}tompouce{/i}, of course!\”"
             s "\“Sounds good, thanks for the tips!\”"
             j "\“You’re welcome!\”"

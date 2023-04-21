@@ -8,13 +8,13 @@ label supermarket:
     if friends:
         label dilemma9:
             if is_dutch:
-                j "\“Hey, do you want to eat together? I'm making [dinner]\”"
+                j "\“Hey, do you want to eat together? I'm making a [dinner].\”"
                 s "\“Yes, I would like to! I like everything except goat cheese.\”"
                 j "\“Don’t worry, this meal doesn’t have goat cheese.\”"
                 s "\“Oh, and I only eat halal meat due to religious reasons.\”"
                 j "\“Alright.\”"
             else:
-                s "\“Hey, do you want to eat together? I'm making [dinner]\”"
+                s "\“Hey, do you want to eat together? I'm making a [dinner].\”"
                 j "\“Yes, I would like to! I like everything except carrots.\”"
                 s "\“Don’t worry, this meal doesn’t have carrots.\”"
                 j "\“Oh, and I only eat halal meat due to religious reasons.\”"
@@ -49,7 +49,7 @@ label supermarket:
             if is_dutch:
                 s "\“Thanks for inviting me to your place! I’m staying in a hostel too currently.\”"
                 j "\“Yeah, no problem! Wait, in which hostel are you staying?\”"
-                s "\“At the Student Hostel close to the city theatre. It’s actually not so far from the Stayokay here at Neude.\”"
+                s "\“At the {i}Student Hostel{/i} close to the city theatre. It’s actually not so far from the {i}Stayokay{/i} here at Neude.\”"
                 s "\“By the way, can I complain about somebody to you?\”"
                 j "\“Of course! Spill the tea.\”"
                 s "\“OK, so my friend is vegan, but I just don’t understand why anybody would be vegan.\”"
@@ -57,7 +57,7 @@ label supermarket:
             else:
                 j "\“Thanks for inviting me to your place! I’m staying in a hostel too currently.\”"
                 s "\“Yeah, no problem! Wait, in which hostel are you staying?\”"
-                j "\“At the Student Hostel close to the city theatre. It’s actually not so far from the Stayokay here at Neude.\”"
+                j "\“At the {i}Student Hostel{/i} close to the city theatre. It’s actually not so far from the {i}Stayokay{/i} here at Neude.\”"
                 j "\“By the way, can I complain about somebody to you?\”"
                 s "\“Of course! Spill the tea.\”"
                 j "\“OK, so my friend is vegan, but I just don’t understand why anybody would be vegan.\”"

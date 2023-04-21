@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/at_hospi.rpy", line 66: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-            centered """
+File "game/travelling.rpy", line 78: end of line expected.
+    call hide_npc with Dissolve(0.5)
+                  ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Thu Apr 20 21:34:30 2023
+Fri Apr 21 12:55:17 2023

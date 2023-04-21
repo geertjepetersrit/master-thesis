@@ -8,17 +8,17 @@ label travelling:
     scene bg black with Dissolve(0.5)
 
     centered """
-    While you are glad you have a place to stay for now, you would rather find housing for a longer period of time. Preferable with more space, but less expensive. Luckily, this evening you are invited for a {i}hospiteeravond{/i}.
+    While you are glad you have a place to stay for now, you would rather find housing for a longer period of time. Preferable with more space, but less expensive. \n\nLuckily, this evening you are invited for a {i}hospiteeravond{/i}.
 
-    You wonder how the evening will play out. Basically, you are invited to a house viewing, which is called a {i}hospi{/i}, in short. The house is looking for new roommates.
+    You wonder how the evening will play out. \n\nBasically, you are invited to a house viewing, which is called a {i}hospi{/i}, in short. The house is looking for new roommates.
 
-    Usually, several people are invited and you have the chance to see the house and the room. A small party can be held, but in the end, it is all about who is the best match for the house.
+    Usually, several people are invited and you have the chance to see the house and the room. \n\nA small party can be held, but in the end, it is all about who is the best match for the house.
 
-    Or in this case: two matches, as there are two rooms available. {i}Huize Peereboom{/i} is looking for one Dutch and one international student, to maintain the balance.
+    Or in this case: two matches, as there are two rooms available. \n\n{i}Huize Peereboom{/i} is looking for one Dutch and one international student, to maintain the balance.
 
     Likewise, {i}Huize Peereboom{/i} finds it important that everyone gets along well, so they prefer Dutch and international students who are already close.
 
-    So, it seems to be in your benefit to befriend someone from a different nationality. Also, you could try to interact with strangers too, as both could increase your chances of getting a room. You never know when you will run into your potential roommates…
+    So, it seems to be in your benefit to befriend someone from a different nationality. \n\nAlso, you could try to interact with strangers too, as both could increase your chances of getting a room. \n\nYou never know when you will run into your potential roommates…
 
     """
 
@@ -68,7 +68,7 @@ label travelling:
         "You hear someone joking about ethnicities by using a derogatory term."
         show chad at above_right with moveinright
         c "\“Hehe, of course those {i}tacoheads{/i} take as much free food samples as possible.\”"
-        hide chad
+        hide chad with Dissolve(0.5)
         call show_npc
         if is_dutch:
             s "What’s so funny about it? I think it’s kinda offensive."
@@ -99,7 +99,7 @@ label travelling:
                     else:
                         s "Excuse me, but I would appreciate it if you would stop arguing. It stresses me out, please. Thank you."
 
-        hide chad
+        hide chad with Dissolve(0.5)
         "Unfortunately, your strategy doesn’t work and the two people continue disagreeing."
         "Hence, you try to distract yourself by texting your best friend, describing the situation you’re in."
         "They reply with: \“OK, yeah that sucks. I would try not to get involved in that, but what’s your own opinion about it?\”"
@@ -168,7 +168,7 @@ label travelling:
     centered """
     Before you think about what just happened, Chad and the other person leave and you continue your travel towards the campus.
 
-    You try to look back on what was taking place just moments ago. Did you just swap bodies for a moment?
+    You try to look back on what was taking place just moments ago. \n\nDid you just swap bodies for a moment?
 
     No, that can’t be, as you couldn’t control Chad, you could only hear him thinking.
 

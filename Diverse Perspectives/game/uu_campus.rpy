@@ -52,7 +52,7 @@ label uu_campus:
                 show carmen at above_right with moveinright
                 carm "\“These non-binary pronouns don’t work for me. I find it too much effort, he’s not here and I don’t like him anyways.\”"
                 carm "\“Plus, these pronouns don’t even exist in my native language. So I’ll just stick to using {i}him{/i}.\”"
-                hide carmen
+                hide carmen with Dissolve(0.5)
                 call show_npc
                 if is_dutch:
                     s "\“O my god. Did you hear that?\”"
@@ -69,12 +69,24 @@ label uu_campus:
                         $answer3a = "disagree"
                         $renpy.fix_rollback()
                         $score += 1
+                        if is_dutch:
+                            j "\“If somebody explained their pronouns, I think you should try to use them. It could mean a lot to them.\”"
+                        else:
+                            s "\“If somebody explained their pronouns, I think you should try to use them. It could mean a lot to them.\”"
                     "No opinion.":
                         $answer3a = "no_opinion"
                         $renpy.fix_rollback()
+                        if is_dutch:
+                            j "\“To be honest, I don’t really have an opinion about it.\”"
+                        else:
+                            s "\“To be honest, I don’t really have an opinion about it.\”"
                     "I could see why they would see it that way.":
                         $answer3a = "agree"
                         $renpy.fix_rollback()
+                        if is_dutch:
+                            j "\“From their perspective, I could see why they would think like that.\”"
+                        else:
+                            s "\“From their perspective, I could see why they would think like that.\”"
 
                 if is_dutch:
                     s "\“Yeah, me too.\”"
@@ -143,12 +155,11 @@ label uu_campus:
 
     label go_to_kbg:
         scene bg black with Dissolve(0.5)
-        centered "\[beep!\] Your phone reminds you your class starts within 15 minutes. {i}Lecture 1: Introduction to AI{/i}, it says. You don’t want to be late on your first day!"
+        centered "\[beep!\] Your phone reminds you your class starts within 15 minutes. \n\n{i}Lecture 1: Introduction to AI{/i}, it says. You don’t want to be late on your first day!"
         scene bg uithof_rainbow with Dissolve(0.5)
-        call show_avatar
+        call show_all
         "You check your schedule in the UU app and it says your class is in {i}KBG Cosmos{/i}. You have no idea where that is."
         if friends:
-            call show_npc
             if is_dutch:
                 "You look around and see Sam."
                 j "Do you want to walk to class together?"
@@ -162,12 +173,11 @@ label uu_campus:
             "So, you use your best friend Google Maps to find your way."
 
         scene bg kbg_outside with Dissolve(0.5)
-        call show_avatar
+        call show_all
         "After some walking, you arrive at the KBG building. So many windows…"
         "In the distance, you also see a sign that says {i}Botanical Gardens{/i}. You put that mentally on your Utrecht bucket list. Perks of being a student is free entrance!"
 
         if friends:
-            call show_npc
             if is_dutch:
                 j "\“Hey, have you been to the Botanical Gardens before?\”"
                 s "\“Not yet, but I’d like to!\”"
@@ -185,9 +195,13 @@ label uu_campus:
                 j "\“Cool! \[points at the KBG door\] Let's go inside.\”"
 
     label enter_kbg:
+        scene bg kbg_entrance with Dissolve(0.5)
+        call show_all
+        "You enter the KBG building, trying not to get hit by the rotating door."
+        "It’s harder than it looks."
         scene bg kbg_inside with Dissolve(0.5)
-        call show_avatar
-        "You go through the door and a sign says the Cosmos lecture hall is on the first floor."
+        call show_all
+        "As you made it through, you see a sign that says the Cosmos lecture hall is on the first floor."
         if not friends:
             label dilemma3B:
                 "In front of the stairs, someone approaches you. They seem to have some kind of paper in their hand."
@@ -242,7 +256,7 @@ label uu_campus:
 
     label at_spar:
         scene bg spar_uni with Dissolve(0.5)
-        call show_avatar
+        call show_all
         "After climbing the stairs, a pink crocodile catches your eye. Uhm, the what?? Oh, it’s the mascot from the Spar University! You still have time for a drink."
 
         # Trivial choice
@@ -256,20 +270,22 @@ label uu_campus:
                         "Just black":
                             $drink = "black_coffee"
                             $renpy.fix_rollback()
+                            "You enjoy your black coffee."
                         "With sugar and cream":
                             $drink = "starbucks"
                             $renpy.fix_rollback()
+                            "You enjoy your coffee with sugar and cream."
                 "A tea":
                     menu:
                         "Which tea flavour do you get?"
                         "Earl grey":
                             $drink = "earl_grey"
                             $renpy.fix_rollback()
+                            "You enjoy your earl grey tea."
                         "Melon":
                             $drink = "melon"
                             $renpy.fix_rollback()
                             if friends:
-                                call show_npc
                                 if is_dutch:
                                     s "\“Wait, you seriously like melon tea?\”"
                                     j "\“Yes. You don’t?\”"

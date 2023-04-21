@@ -1,11 +1,10 @@
 label lecture_room:
     scene bg cosmos_lecture with Dissolve(0.5)
-    call show_avatar
+    call show_all
     "Big, grey letters on the wall spell {i}Cosmos{/i}."
     "That must be the lecture room. You open the door and enter just in time. Quickly, you pick a seat."
 
     if friends:
-        call show_npc
         if is_dutch:
             "Sam sits next to you."
         else:
@@ -16,7 +15,7 @@ label lecture_room:
     show max at above_right with moveinright
     dr "\“Welcome everybody to your very first class of {i}Introduction to AI{/i}.\”"
     dr "\“I’m dr. Max Caulfield and I hope you all enjoyed your summer break. Let’s start.\”"
-    hide max
+    hide max with Dissolve(0.5)
     "Dr. Caulfield’s monologue continues for a while, but soon your thoughts drift away."
     "You wonder how many international students there are at UU."
 
@@ -102,7 +101,7 @@ label lecture_room:
         j "\“Cool, thanks!\”"
     else:
         s "\“Cool, thanks!\”"
-    hide chloe
+    hide chloe with Dissolve(0.5)
 
     "You’re excited about discovering Utrecht’s nightlife. The more reason to find a room as soon as possible."
 
@@ -178,8 +177,8 @@ label lecture_room:
         if answer5 == "switch_topic":
             "The group looks confused at you. However, they all sense the tense atmosphere, so they’re happy to switch the topic."
         if answer5 == "talk":
-            chloe "{i}\“Thanks so much for standing up for me! I’m so done with the fact that it’s such a big deal every time I bring it up.\”{/i}"
-            chloe "{i}\“As if my whole personality is reduced to having a girlfriend instead of a boyfriend and I owe everyone an explanation.\”{/i}"
+            chloe "\“Thanks so much for standing up for me! I’m so done with the fact that it’s such a big deal every time I bring it up.\”"
+            chloe "\“As if my whole personality is reduced to having a girlfriend instead of a boyfriend and I owe everyone an explanation.\”"
             if is_dutch:
                 j "\“Yeah, no problem! Glad I could help.\”"
                 chloe "\“Are you also studying Artificial Intelligence?\”"
@@ -197,8 +196,10 @@ label lecture_room:
                 call phone_nr
                 if give_nr:
                     j "\“Here it is. Maybe your girlfriend could join too? I would like to meet her.\”"
+                    chloe "\“Sure!\”"
                 if not give_nr:
                     j "\“Sorry, but I don’t know you that well. But thanks for offering.\”"
+                    chloe "\“No problem!\”"
             else:
                 s "\“Yeah, no problem! Glad I could help.\”"
                 chloe "\“Are you also studying Artificial Intelligence?\”"
@@ -216,10 +217,12 @@ label lecture_room:
                 call phone_nr
                 if give_nr:
                     s "\“Here it is. Maybe your girlfriend could join too? I would like to meet her.\”"
+                    chloe "\“Sure!\”"
                 if not give_nr:
                     s "\“Sorry, but I don’t know you that well. But thanks for offering.\”"
+                    chloe "\“No problem!\”"
 
-    hide chloe
+    hide chloe with Dissolve(0.5)
     "Before you can continue the conversation, the break ends. Too soon, as always."
     "The professor begins with the second part of the lecture. Although you find it interesting, your brain is still in holiday mode, which makes it hard to stay focused for more than 10 minutes."
     "Only 45 more minutes left. This is roughly 4 x 10 minutes. Should be doable."
@@ -275,7 +278,7 @@ label lecture_room:
             call show_avatar
             show val at above_right with moveinright
             "Val goes back to her seat, as the lecture is almost over."
-            hide val
+            hide val with Dissolve(0.5)
 
         # Consequential choice, second chance
         if answer6 == "maybe":
@@ -298,7 +301,7 @@ label lecture_room:
 
         # Second chance to befriend NPC if player has accepted Val and not gotten angry in Dilemma #2
         if not friends and answer6 == "yes" and answer2 != "yell":
-            hide val
+            hide val with Dissolve(0.5)
             call show_npc
             $friends = True
             "Another student approaches you."

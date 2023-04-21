@@ -4,6 +4,11 @@ label city_centre:
             scene bg minnaert_bike_shed with Dissolve(0.5)
             call show_all
             "As you leave the KBG, you look for your bike."
+            if friends:
+                if is_dutch:
+                    "Sam is by bike too."
+                else:
+                    "Jip is by bike too."
             scene bg uithof_rainbow with Dissolve(0.5)
             call show_all
             "You bike towards the city centre and park your bike in one of the sheds underground."
@@ -12,6 +17,11 @@ label city_centre:
             scene bg usp_bus_stop with Dissolve(0.5)
             call show_all
             "As you leave the KBG, you look for the bus stop."
+            if friends:
+                if is_dutch:
+                    "Sam is by bus too."
+                else:
+                    "Jip is by bus too."
             scene bg usp_bus with Dissolve(0.5)
             call show_all
             "You take bus 28 and get off at the stop called ‘Neude’"
@@ -21,7 +31,7 @@ label city_centre:
         call show_all
         "You walk along the {i}Oudegracht{/i}, which is a street in the heart of the centre. The length of the street is almost 2 km!"
         "It’s also the street where the tiniest house in Utrecht is located: at number 133. At the other side of the street is the oldest house in Utrecht: at number 114."
-        "In fact, that house is named {i}Drakenborch{i} and used to be a castle."
+        "In fact, that house is named {i}Drakenborch{/i} and used to be a castle."
 
         "From the {i}Oudegracht{/i}, you could already see the Dom Tower. Impressive!"
 

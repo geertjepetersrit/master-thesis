@@ -70,6 +70,8 @@ label at_hospi:
     label recap:
         scene bg black with Dissolve(2)
         centered """
+        zzz…
+
         You’ve reached one of the three endings. \n\nCongratulations for completing the game!
 
         During the story, there were several dilemmas. \n\nMost of the dilemmas covered a specific diversity (sub)theme.

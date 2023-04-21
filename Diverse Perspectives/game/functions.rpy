@@ -39,11 +39,11 @@ label show_avatar:
 
 label hide_avatar:
     if gender == "female":
-        hide female_avatar
+        hide female_avatar with Dissolve(0.5)
     elif gender == "male":
-        hide male_avatar
+        hide male_avatar with Dissolve(0.5)
     else:
-        hide nb_avatar
+        hide nb_avatar with Dissolve(0.5)
 
     return
 
@@ -59,11 +59,11 @@ label show_npc:
 
 label hide_npc:
     if gender == "female":
-        hide male_avatar
+        hide male_avatar with Dissolve(0.5)
     elif gender == "male":
-        hide nb_avatar
+        hide nb_avatar with Dissolve(0.5)
     else:
-        hide female_avatar
+        hide female_avatar with Dissolve(0.5)
 
     return
 
@@ -250,7 +250,7 @@ label bonus_dilemma:
         show steph at above_right with moveinright
 
     "Steph smiles and walks away."
-    hide steph
+    hide steph with Dissolve(0.5)
     call show_all
 
     return
