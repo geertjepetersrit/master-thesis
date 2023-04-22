@@ -13,6 +13,7 @@ label lecture_room:
 
     "The professor starts talking."
     show max at above_right with moveinright
+    scene bg cosmos_lecture_blurred with Dissolve(0.5)
     dr "\“Welcome everybody to your very first class of {i}Introduction to AI{/i}.\”"
     dr "\“I’m dr. Max Caulfield and I hope you all enjoyed your summer break. Let’s start.\”"
     hide max with Dissolve(0.5)
@@ -76,6 +77,7 @@ label lecture_room:
             call hide_npc
 
     "After 45 minutes, it’s time for a break. You hear some students talk about their plans for going out this evening."
+    call show_avatar
     show chloe at above_right with moveinright
     chloe "\“Should I go to {i}Ekko{/i} or {i}Tivo{/i}?\”"
     if is_dutch:
@@ -96,18 +98,22 @@ label lecture_room:
     # Consequential choice
     call dilemma5
 
+    scene bg cosmos_lecture with Dissolve(0.5)
+    call show_avatar
     "Before you can continue the conversation, the break ends. Too soon, as always."
     "The professor begins with the second part of the lecture. Although you find it interesting, your brain is still in holiday mode, which makes it hard to stay focused for more than 10 minutes."
     "Only 45 more minutes left. This is roughly 4 x 10 minutes. Should be doable."
     "After Max Caulfield explains the group project, it’s time to form groups of three and you are free to form them yourselves."
 
     if friends:
+        call show_npc
         if is_dutch:
             "You team up with Sam. It’s nice to have at least one familiar face in your group."
         else:
             "You team up with Jip. It’s nice to have at least one familiar face in your group."
 
     # Consequential choice
+    call hide_npc
     call dilemma6
 
     call in_kbg

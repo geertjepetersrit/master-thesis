@@ -168,6 +168,7 @@ label dilemma3A:
     scene bg uithof_rainbow with Dissolve(0.5)
     if answer3a != "no_opinion":
         "Before you can think further about it, Carmen says:"
+        show bg uithof_rainbow_blurred with Dissolve(0.5)
         show carmen at above_left with moveinleft
         if answer3a == "disagree":
             carm "\“I tried asking his pronouns once, but they just don’t stick with me. I can’t get used to it and I hardly find it the effort, since I rarely see that person.\”"
@@ -186,6 +187,7 @@ label dilemma3A:
 label dilemma3B:
     "In front of the stairs, someone approaches you. They seem to have some kind of paper in their hand."
     show leo at above_right with moveinright
+    scene bg kbg_inside_blurred with Dissolve(0.5)
     l "\“Hey, could I ask you something really quick?\”"
     if is_dutch:
         j "\“Of course.\”"
@@ -245,6 +247,7 @@ label dilemma4:
     show matilda at above_right with moveinright
     "While you are walking in the building, you see a girl who’s in a wheelchair."
     "Matilda’s struggling to open the door, but she hasn’t asked for any help."
+    show bg kbg_door_blurred with Dissolve(0.5)
 
     # Consequential choice
     menu:
@@ -319,8 +322,10 @@ label dilemma4:
     return
 
 label dilemma5:
+    show bg cosmos_lecture with Dissolve(0.5)
     "The group continues their conversation about their evening plans."
     "Some students are talking about going to café {i}BodyTalk.{/i}"
+    show bg cosmos_lecture_blurred with Dissolve(0.5)
     if is_dutch:
         j "\“What is that?\”"
     else:
@@ -423,6 +428,7 @@ label dilemma5:
 label dilemma6:
     "Someone approaches you."
     show val at above_right with moveinright
+    show bg cosmos_lecture_blurred with Dissolve(0.5)
     v "\“Hey, I’m Val. I studied at the {i}HU{/i} (Hogeschool Utrecht, which is the university of applied sciences) first.\”"
     v "\“I don’t know anyone here. Could I join your group?\”"
 
@@ -454,7 +460,7 @@ label dilemma6:
         if not friends:
             scene bg black with Dissolve(0.5)
             centered "A short moment later…"
-            scene bg cosmos_lecture with Dissolve(0.5)
+            scene bg cosmos_lecture_blurred with Dissolve(0.5)
             call show_avatar
             show val at above_right with moveinright
 
@@ -519,6 +525,7 @@ label bonus_dilemma:
     if friends:
         call hide_npc
     show steph at above_right with moveinright
+    show bg dom_square_blurred with Dissolve(0.5)
     st "\“In case you’re wondering, the Dom is actually 112 metres and 32 centimetres! To get to the top, you have to take 465 steps.\”"
     st "\“People even organise stair climbing matches. I like random facts, that's why I know. People find me a bit peculiar, and they might be right.\”"
     st "\“I’m Steph, by the way.\”"
@@ -555,23 +562,7 @@ label bonus_dilemma:
 
     # Version A
     if friends:
-        #call switch_steph
-        # Perspective switch
-        scene bg black with Dissolve(0.5)
-        centered "Oh, it’s happening again! What’s on their mind?"
-        scene bg dom_square with Dissolve(0.5)
-        show steph at above_left with moveinleft
-        if bonus_answer == "downplay":
-            st "{i}\“Why did I ask a random stranger for advice? Besides that, you probably think I’m blowing it up, but that’s not the case. I’m really struggling with it.\”{/i}"
-        else:
-            st "{i}\“They’re right, it’s my own decision to make. I guess I just needed to feel understood.\”{/i}"
-
-        # Switch back
-        scene bg black with Dissolve(0.5)
-        centered "Back to hearing only your own thoughts."
-        scene bg dom_square with Dissolve(0.5)
-        call show_avatar
-        show steph at above_right with moveinright
+        call switch_steph
 
     "Steph smiles and walks away."
     hide steph with Dissolve(0.5)
@@ -656,6 +647,7 @@ label dilemma8B:
     return
 
 label dilemma9:
+    show bg jumbo_blurred with Dissolve(0.5)
     if is_dutch:
         j "\“Hey, do you want to eat together? I'm making a [dinner].\”"
         s "\“Yes, I would like to! I like everything except goat cheese.\”"
@@ -669,6 +661,7 @@ label dilemma9:
         j "\“Oh, and I only eat halal meat due to religious reasons.\”"
         s "\“Alright.\”"
 
+    show bg jumbo with Dissolve(0.5)
     "You’re both at the supermarket buying ingredients for dinner. However, the halal meat is out of stock."
 
     # Consequential choice
@@ -700,6 +693,7 @@ label dilemma10:
     "After paying for your groceries, you go home and eat dinner together."
     scene bg hostel_lobby with Dissolve(0.5)
     call show_all
+    show bg hostel_lobby_blurred with Dissolve(0.5)
     if is_dutch:
         s "\“Thanks for inviting me to your place! I’m staying in a hostel too currently.\”"
         j "\“Yeah, no problem! Wait, in which hostel are you staying?\”"
@@ -716,6 +710,8 @@ label dilemma10:
         s "\“Of course! Spill the tea.\”"
         j "\“OK, so my friend is vegan, but I just don’t understand why anybody would be vegan.\”"
         j "\“It feels like they do it to guilt-trip people that do eat meat and dairy products. I can’t wrap my head around it.\”"
+
+    show bg hostel_lobby with Dissolve(0.5)
     "Their monologue of complaints continues for a while."
 
     # Consequential choice
@@ -757,6 +753,7 @@ label dilemma10:
                     $renpy.fix_rollback()
                     $score += 1
                     $send_to_file("choices.txt", "\nDilemma 10: " + answer10)
+                    show bg hostel_lobby_blurred with Dissolve(0.5)
                     if is_dutch:
                         j "\“Actually, I do disagree. People have their own reasons to be vegan. I think it’s unfair you criticise them for that.\”"
                     else:

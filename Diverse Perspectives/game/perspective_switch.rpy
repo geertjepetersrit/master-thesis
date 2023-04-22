@@ -13,10 +13,10 @@ label switch_chad:
     """
 
     if by_bike:
-        scene bg bike with Dissolve(0.5)
+        scene bg bike_blurred with Dissolve(0.5)
         call ps_chad
     else:
-        scene bg bus_inside with Dissolve(0.5)
+        scene bg bus_inside_blurred with Dissolve(0.5)
         call ps_chad
 
     # Switch back
@@ -28,12 +28,12 @@ label switch_chad:
     Chad felt it too.
     """
     if by_bike:
-        scene bg bike with Dissolve(0.5)
+        scene bg bike with_blurred Dissolve(0.5)
         call show_avatar
         call convo_chad
 
     else:
-        scene bg bus_inside with Dissolve(0.5)
+        scene bg bus_inside_blurred with Dissolve(0.5)
         call show_avatar
         call convo_chad
 
@@ -77,7 +77,7 @@ label switch_carmen:
     # Perspective switch
     scene bg black with Dissolve(0.5)
     centered "The feeling of having a déjà vu pops up. Again, you can hear the thoughts of Carmen."
-    scene bg uithof_rainbow with Dissolve(0.5)
+    scene bg uithof_rainbow_blurred with Dissolve(0.5)
     show carmen at above_left with moveinleft
 
     if answer3a == "disagree":
@@ -101,7 +101,7 @@ label switch_matilda:
     # Perspective switch
     scene bg black with Dissolve(0.5)
     centered "Another perspective switch! What is she thinking?"
-    scene bg kbg_door with Dissolve(0.5)
+    scene bg kbg_door_blurred with Dissolve(0.5)
     show matilda at above_left with moveinleft
     if answer4 == "ignore":
         m "{i}\“Why are you pretending not to see me? I can clearly see you. And now you look away. How rude.\”{/i}"
@@ -125,7 +125,7 @@ label switch_chloe:
     # Perspective switch
     scene bg black with Dissolve(0.5)
     centered "Before you notice, you can read the other’s mind again."
-    scene bg cosmos_lecture with Dissolve(0.5)
+    scene bg cosmos_lecture_blurred with Dissolve(0.5)
     show chloe at above_left with moveinleft
     if answer5 == "switch_topic":
         chloe "{i}\“OK, I guess that awkward attempt kinda worked?\”{/i}"
@@ -143,7 +143,7 @@ label switch_chloe:
     # Switch back
     scene bg black with Dissolve(0.5)
     centered "Nevermind…"
-    scene bg cosmos_lecture with Dissolve(0.5)
+    scene bg cosmos_lecture_blurred with Dissolve(0.5)
     call show_avatar
     show chloe at above_right with moveinright
 
@@ -153,7 +153,7 @@ label switch_val:
     # Perspective switch
     scene bg black with Dissolve(0.5)
     centered "Poof! Now you’re in Val’s head!"
-    scene bg cosmos_lecture with Dissolve(0.5)
+    scene bg cosmos_lecture_blurred with Dissolve(0.5)
     show val at above_left with moveinleft
     if answer6 == "no":
         v "{i}\“Actually, I don’t understand it at all. I can’t shake the feeling that people look down on me just because I didn’t do university…\”{/i}"
@@ -177,7 +177,7 @@ label switch_shiro:
     # Perspective switch
     scene bg black with Dissolve(0.5)
     centered "Oh, there’s the switch! What are they thinking this time?"
-    scene bg kbg_inside with Dissolve(0.5)
+    scene bg kbg_inside_blurred with Dissolve(0.5)
     show shiro at above_left with moveinleft
     if answer7 == "ask":
         sh "{i}\“I’m so glad that you asked. This is just the boost I needed to put an end to this nonsense.\”{/i}"
@@ -207,22 +207,22 @@ label switch_shiro:
 
     return
 
-#label switch_steph:
-#    # Perspective switch
-#    scene bg black with Dissolve(0.5)
-#    centered "Oh, it’s happening again! What’s on their mind?"
-#    scene bg dom_square with Dissolve(0.5)
-#    show steph at above_left with moveinleft
-#    if bonus_answer == "downplay":
-#        st "{i}\“Why did I ask a random stranger for advice? Besides that, you probably think I’m blowing it up, but that’s not the case. I’m really struggling with it.\”{/i}"
-#    else:
-#        st "{i}\“They’re right, it’s my own decision to make. I guess I just needed to feel understood.\”{/i}"
-#
-#    # Switch back
-#    scene bg black with Dissolve(0.5)
-#    centered "Back to hearing only your own thoughts."
-#    scene bg dom_square with Dissolve(0.5)
-#    call show_avatar
-#    show steph at above_right with moveinright
-#
-#    return
+label switch_steph:
+    # Perspective switch
+    scene bg black with Dissolve(0.5)
+    centered "Oh, it’s happening again! What’s on their mind?"
+    scene bg dom_square_blurred with Dissolve(0.5)
+    show steph at above_left with moveinleft
+    if bonus_answer == "downplay":
+        st "{i}\“Why did I ask a random stranger for advice? Besides that, you probably think I’m blowing it up, but that’s not the case. I’m really struggling with it.\”{/i}"
+    else:
+        st "{i}\“They’re right, it’s my own decision to make. I guess I just needed to feel understood.\”{/i}"
+
+    # Switch back
+    scene bg black with Dissolve(0.5)
+    centered "Back to hearing only your own thoughts."
+    scene bg dom_square with Dissolve(0.5)
+    call show_avatar
+    show steph at above_right with moveinright
+
+    return

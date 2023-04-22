@@ -41,6 +41,7 @@ label city_centre:
 
         # Only possible when friends
         label .another_bet:
+            show bg dom_square_blurred with Dissolve(0.5)
             if bet == "won":
                 if is_dutch:
                     j "\“Wanna bet again?\”"
@@ -56,6 +57,7 @@ label city_centre:
                     j "\“Wanna bet again?\”"
                     s "\“I’ll skip this one.\”"
 
+        show bg dom_square with Dissolve(0.5)
         call dom_height
 
     "You’ve also read on the internet that Utrecht is the city where Miffy was born. Or in Dutch: {i}Nijntje{/i}."
@@ -71,6 +73,7 @@ label city_centre:
     "There’s a free spot on the terrace."
     "Because of the many canals in the centre, a lot of cafés still receive their beer by boat. In the middle ages, the beer was even brewed by using the water from the canals. Ew!"
     "After a few minutes, a waiter comes to your table."
+    show bg terrace_neude_blurred with Dissolve(0.5)
 
     # Trivial choice
     label terrace_drink:
@@ -97,6 +100,7 @@ label city_centre:
             call dilemma8B
 
     label dinner:
+        show bg terrace_neude with Dissolve(0.5)
         "After you finish your drink, your stomach starts rumbling. Time for dinner!"
 
         # Trivial choice

@@ -8,6 +8,7 @@ label at_hospi:
         "You arrive at the house. You can’t help it, but you’re a little nervous. Or a lot."
         "As you walk through the front door, you see the person you’ve run into earlier today."
         call show_npc
+        show bg huize_peereboom_blurred with Dissolve(0.5)
         if score >= 6:
             $score += 1
             "The person greets you kindly and you immediately feel more confident."
@@ -20,7 +21,9 @@ label at_hospi:
     scene bg hospi with Dissolve(0.5)
     call show_all
     "You enter the living room and take a seat. There are quite some people and Matilda is here too! Wait, she lives here??"
+    show bg hospi_blurred with Dissolve(0.5)
     "You remember the encounter you had with your potential new roommate earlier today…"
+
     if friends:
         if is_dutch:
             "You sit next to Sam."

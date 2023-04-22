@@ -99,6 +99,7 @@ label choose_drink:
                     $renpy.fix_rollback()
                     "You enjoy your melon tea."
                     if friends:
+                        show bg spar_uni_blurred with Dissolve(0.5)
                         if is_dutch:
                             s "\“Wait, you seriously like melon tea?\”"
                             j "\“Yes. You don’t?\”"
@@ -114,6 +115,7 @@ label choose_drink:
         "Nothing":
             $drink = "nothing"
             $renpy.fix_rollback()
+            show bg spar_uni_blurred with Dissolve(0.5)
             if is_dutch:
                 j "{i} Way too overpriced.{/i}"
             else:
@@ -184,6 +186,22 @@ label dom_height:
 
     return
 
+label drink_order:
+    menu:
+        "What would you like to drink?"
+
+        "A beer":
+            $order = "beer"
+            $renpy.fix_rollback()
+        "A wine":
+            $order = "wine"
+            $renpy.fix_rollback()
+        "A soda":
+            $order = "soda"
+            $renpy.fix_rollback()
+
+    return
+
 label colour:
     "\“Cheers!\“ you say and you both toast the glasses. As you are both enjoying your drinks, you’re chatting about all kinds of stuff."
     if is_dutch:
@@ -221,22 +239,6 @@ label colour:
         j "\“Fair. And that does have a nice ring to it.\”"
         s "\[laughs\] \“Hey, don’t steal my idea!\”"
         j "\“I would never…\” \[laughs\]"
-
-    return
-
-label drink_order:
-    menu:
-        "What would you like to drink?"
-
-        "A beer":
-            $order = "beer"
-            $renpy.fix_rollback()
-        "A wine":
-            $order = "wine"
-            $renpy.fix_rollback()
-        "A soda":
-            $order = "soda"
-            $renpy.fix_rollback()
 
     return
 

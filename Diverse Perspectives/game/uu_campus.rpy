@@ -23,6 +23,7 @@ label uu_campus:
             $friends = False
             "You wonder if they are headed in the same direction as you."
         elif answer2 == "yell":
+            show bg uithof_rainbow_blurred with Dissolve(0.5)
             $friends = False
             if is_dutch:
                 s "\“It’s you again! Watch out!\”"
@@ -31,6 +32,7 @@ label uu_campus:
                 j "\“It’s you again! Watch out!\”"
                 s "\“Watch out for yourself!\”"
         else:
+            show bg uithof_rainbow_blurred with Dissolve(0.5)
             $friends = True
             if is_dutch:
                 j "\“I’m so sorry!” I didn’t see you, I swear!\”"
@@ -55,6 +57,7 @@ label uu_campus:
         call show_all
         "You check your schedule in the UU app and it says your class is in {i}KBG Cosmos{/i}. You have no idea where that is."
         if friends:
+            show bg uithof_rainbow_blurred with Dissolve(0.5)
             if is_dutch:
                 "You look around and see Sam."
                 j "Do you want to walk to class together?"
@@ -73,6 +76,7 @@ label uu_campus:
         "In the distance, you also see a sign that says {i}Botanical Gardens{/i}. You put that mentally on your Utrecht bucket list. Perks of being a student is free entrance!"
 
         if friends:
+            show bg kbg_outside_blurred with Dissolve(0.5)
             if is_dutch:
                 j "\“Hey, have you been to the Botanical Gardens before?\”"
                 s "\“Not yet, but I’d like to!\”"

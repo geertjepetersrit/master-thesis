@@ -133,6 +133,7 @@ label dilemma7_ask:
     $renpy.fix_rollback()
     $score += 1
     $send_to_file("choices.txt", "\nDilemma 7: " + answer7)
+    show bg kbg_inside_blurred with Dissolve(0.5)
     if is_dutch:
         j "\“Hey, are you OK?\“"
     else:
@@ -145,6 +146,7 @@ label dilemma7_ask:
     return
 
 label dilemma10_disagree:
+    show bg hostel_lobby_blurred with Dissolve(0.5)
     if is_dutch:
         s "\“Well, I still agree to disagree. But that’s what we're friends for.\”"
         j "\“Yep.\”"

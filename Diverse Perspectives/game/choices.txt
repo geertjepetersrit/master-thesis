@@ -49,3 +49,28 @@ Dilemma 6: no
 Dilemma 7: observe
 Dilemma 8B: Dutch
 The total score is -5
+
+---
+
+Player 4
+Dilemma 1: no
+Dilemma 2: stop
+Dilemma 3A: agree
+Dilemma 3A: agree
+Dilemma 4: ask
+Dilemma 4: ask
+Dilemma 5: wait
+Dilemma 6: yes
+Dilemma 6: yes
+Dilemma 6: yes
+Dilemma 6: yes
+Dilemma 7: ignore
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: lie
+Dilemma 10: disagree
+Dilemma 10: disagree
+Dilemma 10: disagree
+Dilemma 10: disagree
+The total score is 8

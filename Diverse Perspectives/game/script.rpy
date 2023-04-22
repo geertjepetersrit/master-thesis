@@ -39,5 +39,4 @@ label start:
     # This ends the game and returns to the main menu
     return
 
-# TODO: add blurry backgrounds when characters are talking
 # TODO: copy project for version B

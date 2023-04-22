@@ -30,6 +30,7 @@ label in_kbg:
     call dilemma7
 
     label kingsday:
+        show bg kbg_inside with Dissolve(0.5)
         if is_dutch:
             "Speaking of birthdays, you suddenly think back about this year’s {i}Kingsday{/i}."
             "Eating a {i}tompouce{/i} in the sunshine, visiting the flea market with your friends… seems like ages ago."
@@ -38,6 +39,7 @@ label in_kbg:
             "And the colour orange. Loooots of orange. Why are Dutch people so obsessed with it?"
 
         if friends:
+            show bg kbg_inside_blurred with Dissolve(0.5)
             call show_npc
             s "\“Hey, can I ask you a question?\”"
             j "\“Of course!\”"
