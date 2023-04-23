@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/conseq_choices.rpy", line 650: expected 'image_name_component' not found.
-    show 
-         ^
+File "game/lecture_room.rpy", line 26: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
+    if friends:
+    ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sat Apr 22 20:54:03 2023
+Sun Apr 23 20:32:04 2023

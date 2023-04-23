@@ -42,14 +42,14 @@ label city_centre:
         # Only possible when friends
         label .another_bet:
             show bg dom_square_blurred with Dissolve(0.5)
-            if bet == "won":
+            if friends and set_bet and bet == "won":
                 if is_dutch:
                     j "\“Wanna bet again?\”"
                     s "\“I’ll skip this one.\”"
                 else:
                     s "\“Wanna bet again?\”"
                     j "\“I’ll skip this one.\”"
-            if bet == "lost":
+            if friends and set_bet and bet == "lost":
                 if is_dutch:
                     s "\“Wanna bet again?\”"
                     j "\“I’ll skip this one.\”"
@@ -89,6 +89,7 @@ label city_centre:
             else:
                 j "\“For me too, please!\”"
 
+        show bg terrace_neude with Dissolve(0.5)
         "A few moments later, the waiter arrives with [order]."
 
         if friends:

@@ -28,7 +28,7 @@ label switch_chad:
     Chad felt it too.
     """
     if by_bike:
-        scene bg bike with_blurred Dissolve(0.5)
+        scene bg bike_blurred with Dissolve(0.5)
         call show_avatar
         call convo_chad
 
@@ -127,6 +127,7 @@ label switch_chloe:
     centered "Before you notice, you can read the other’s mind again."
     scene bg cosmos_lecture_blurred with Dissolve(0.5)
     show chloe at above_left with moveinleft
+    show bg cosmos_lecture_blurred with Dissolve(0.5)
     if answer5 == "switch_topic":
         chloe "{i}\“OK, I guess that awkward attempt kinda worked?\”{/i}"
         chloe "{i}\“But I still can’t shake the feeling of harassment, this way people will never realise how invasive and inappropriate their questions actually are.\”{/i}"
@@ -143,7 +144,7 @@ label switch_chloe:
     # Switch back
     scene bg black with Dissolve(0.5)
     centered "Nevermind…"
-    scene bg cosmos_lecture_blurred with Dissolve(0.5)
+    scene bg cosmos_lecture with Dissolve(0.5)
     call show_avatar
     show chloe at above_right with moveinright
 

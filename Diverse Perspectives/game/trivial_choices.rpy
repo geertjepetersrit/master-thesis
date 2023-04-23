@@ -18,12 +18,15 @@ label gender:
         "Female":
             $gender = "female"
             $renpy.fix_rollback()
+            $send_to_file("choices.txt", "\nFemale")
         "Male":
             $gender = "male"
             $renpy.fix_rollback()
+            $send_to_file("choices.txt", "\nMale")
         "Non-binary":
             $gender = "nb"
             $renpy.fix_rollback()
+            $send_to_file("choices.txt", "\nNon-binary")
 
     return
 
@@ -34,9 +37,11 @@ label country:
         "the Netherlands":
             $is_dutch = True
             $renpy.fix_rollback()
+            $send_to_file("choices.txt", "\nDutch")
         "Abroad":
             $is_dutch = False
             $renpy.fix_rollback()
+            $send_to_file("choices.txt", "\nAbroad")
 
     return
 
@@ -129,13 +134,16 @@ label how_many:
         "How many international students are there at UU?"
 
         "Around 12,000":
-            $bet = "lost"
+            if friends:
+                $bet = "lost"
             $renpy.fix_rollback()
         "Around 6,000":
-            $bet = "won"
+            if friends:
+                $bet = "won"
             $renpy.fix_rollback()
         "Around 2,000":
-            $bet = "lost"
+            if friends:
+                $bet = "lost"
             $renpy.fix_rollback()
 
     return
@@ -204,6 +212,7 @@ label drink_order:
 
 label colour:
     "\“Cheers!\“ you say and you both toast the glasses. As you are both enjoying your drinks, you’re chatting about all kinds of stuff."
+    show bg terrace_neude_blurred with Dissolve(0.5)
     if is_dutch:
         "Sam asks:"
     else:

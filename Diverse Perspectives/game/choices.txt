@@ -1,7 +1,41 @@
 
+
+---
+
+Version A
+
+Player 1
+
+Non-binary
+Abroad
+
 Dilemma 1: no
-Dilemma 2: stop
-Dilemma 3A: disagree
+Dilemma 2: yell
+Dilemma 3B: no_opinion
+Dilemma 4: ignore
+Dilemma 5: talk
+Dilemma 6: maybe
+Dilemma 6: yes
+Dilemma 7: observe
+Bonus dilemma: downplay
+Dilemma 8B: Dutch
+
+Bad ending
+
+The total score is -2
+
+---
+
+Version B
+
+Player 2
+
+Female
+Dutch
+
+Dilemma 1: idk
+Dilemma 2: dodge
+Dilemma 3B: support
 Dilemma 4: ask
 Dilemma 5: talk
 Dilemma 6: yes
@@ -10,67 +44,55 @@ Bonus dilemma: thank_support
 Dilemma 8A: English
 Dilemma 9: halal
 Dilemma 10: disagree
-The total score is 13Player 8
-Dilemma 1: no
-Dilemma 2: yell
-Dilemma 3B: support
-Dilemma 4: help
-Dilemma 5: switch_topic
-Dilemma 6: yes
-Dilemma 7: ignore
-Dilemma 8B: English
-The total score is 3Player 2
-Dilemma 1: idk
-Dilemma 2: stop
-Dilemma 3A: disagree
-Dilemma 4: ask
-Dilemma 5: switch_topic
-Dilemma 6: yes
-Dilemma 7: ignore
-Dilemma 7: ask
-Dilemma 8A: both
-Dilemma 9: lie
-Dilemma 10: nothing
-The total score is 5
+
+Good ending
+
+The total score is 9
 
 ---
 
-
-
----
+Version A
 
 Player 3
+
+Male
+Dutch
+
 Dilemma 1: no
 Dilemma 2: yell
 Dilemma 3B: sceptic
-Dilemma 4: ignore
-Dilemma 5: switch_topic
+Dilemma 4: ask
+Dilemma 5: talk
 Dilemma 6: no
-Dilemma 7: observe
-Dilemma 8B: Dutch
-The total score is -5
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8B: English
+
+Bad ending
+
+The total score is 3
 
 ---
 
+Version B
+
 Player 4
+
+Non-binary
+Dutch
+
 Dilemma 1: no
-Dilemma 2: stop
-Dilemma 3A: agree
-Dilemma 3A: agree
+Dilemma 2: dodge
+Dilemma 3B: support
 Dilemma 4: ask
-Dilemma 4: ask
-Dilemma 5: wait
+Dilemma 5: talk
 Dilemma 6: yes
-Dilemma 6: yes
-Dilemma 6: yes
-Dilemma 6: yes
-Dilemma 7: ignore
-Dilemma 7: ask
+Dilemma 7: observe
 Bonus dilemma: thank_support
-Dilemma 8A: English
+Dilemma 8A: both
 Dilemma 9: lie
 Dilemma 10: disagree
-Dilemma 10: disagree
-Dilemma 10: disagree
-Dilemma 10: disagree
-The total score is 8
+
+Neutral ending
+
+The total score is 6

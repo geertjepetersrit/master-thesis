@@ -1,30 +1,52 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 33, in script call
+  File "game/script.rpy", line 44, in script call
     call at_home
   File "game/at_home.rpy", line 57, in script call
     call travelling
-  File "game/functions.rpy", line 38, in script
-    return
-Exception: Could not find return label ('game/uu_campus.rpy', 1681833433, 19).
+  File "game/travelling.rpy", line 54, in script call
+    call uu_campus
+  File "game/uu_campus.rpy", line 117, in script call
+    call lecture_room
+  File "game/lecture_room.rpy", line 123, in script call
+    call in_kbg
+  File "game/in_kbg.rpy", line 54, in script call
+    call city_centre
+  File "game/city_centre.rpy", line 45, in script
+    if friends and set_bet and bet == "won":
+  File "game/city_centre.rpy", line 45, in <module>
+    if friends and set_bet and bet == "won":
+NameError: name 'set_bet' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 33, in script call
+  File "game/script.rpy", line 44, in script call
     call at_home
   File "game/at_home.rpy", line 57, in script call
     call travelling
-  File "game/functions.rpy", line 38, in script
-    return
-  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\ast.py", line 1782, in execute
-    next_node(renpy.game.context().lookup_return(pop=True))
-  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\execution.py", line 726, in lookup_return
-    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
-Exception: Could not find return label ('game/uu_campus.rpy', 1681833433, 19).
+  File "game/travelling.rpy", line 54, in script call
+    call uu_campus
+  File "game/uu_campus.rpy", line 117, in script call
+    call lecture_room
+  File "game/lecture_room.rpy", line 123, in script call
+    call in_kbg
+  File "game/in_kbg.rpy", line 54, in script call
+    call city_centre
+  File "game/city_centre.rpy", line 45, in script
+    if friends and set_bet and bet == "won":
+  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\ast.py", line 2115, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\python.py", line 1092, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\Geertje\Documents\Utrecht\Master Thesis\02_Second_phase\High-fi_prototype\renpy-8.0.3-sdk\renpy\python.py", line 1085, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/city_centre.rpy", line 45, in <module>
+    if friends and set_bet and bet == "won":
+NameError: name 'set_bet' is not defined
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
 Diverse Perspectives 1.0
-Fri Apr 21 14:55:33 2023
+Sun Apr 23 20:32:19 2023

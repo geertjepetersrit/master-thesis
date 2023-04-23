@@ -13,7 +13,17 @@ init python:
 label start:
     $score = 0
     $id = renpy.input("What is your participant ID?", allow="0123456789")
-    $send_to_file("choices.txt", "\n\n---\n\nPlayer " + str(id))
+
+    # Give odd participant IDs version A and even IDs version B
+    $id = int(id)
+    if id % 2  ==  0:
+        $versionA = False
+        $send_to_file("choices.txt", "\n\n---\n\nVersion B")
+    else:
+        $versionA = True
+        $send_to_file("choices.txt", "\n\n---\n\nVersion A")
+
+    $send_to_file("choices.txt", "\n\nPlayer " + str(id) + "\n")
 
     # Enter monologue mode
     centered """
@@ -34,9 +44,7 @@ label start:
     call at_home
 
     # Write down the total score in a .txt file
-    $send_to_file("choices.txt", "\nThe total score is " + str(score))
+    $send_to_file("choices.txt", "\n\nThe total score is " + str(score))
 
     # This ends the game and returns to the main menu
     return
-
-# TODO: copy project for version B

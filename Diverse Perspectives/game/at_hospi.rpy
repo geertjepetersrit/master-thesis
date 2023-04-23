@@ -37,6 +37,7 @@ label at_hospi:
         scene bg black with Dissolve(0.5)
         # Good ending
         if score >= 8:
+            $send_to_file("choices.txt", "\n\nGood ending")
             centered """
             During the day, you’ve become close with the other person. \nYou feel comfortable at the {i}hospi{/i}. {i}Huize Peereboom{/i} likes this.
 
@@ -47,6 +48,7 @@ label at_hospi:
             """
         # Neutral ending
         elif score >= 4:
+            $send_to_file("choices.txt", "\n\nNeutral ending")
             centered """
             You chat a little with the other person and do your best at the {i}hospi{/i}.
 
@@ -57,6 +59,7 @@ label at_hospi:
             """
         # Bad ending
         else:
+            $send_to_file("choices.txt", "\n\nBad ending")
             centered """
             The other person acts coldly towards you at the {i}hospi{/i}. This negatively affects you.
 

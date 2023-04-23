@@ -1,6 +1,10 @@
 label dilemma1:
     "You hear someone joking about ethnicities by using a derogatory term."
     show chad at above_right with moveinright
+    if by_bike:
+        show bg bike_blurred with Dissolve(0.5)
+    else:
+        show bg bus_inside_blurred with Dissolve(0.5)
     c "\“Hehe, of course those {i}tacoheads{/i} take as much free food samples as possible.\”"
     hide chad with Dissolve(0.5)
     call show_npc
@@ -13,6 +17,10 @@ label dilemma1:
     show chad at above_right with moveinright
     c "Whatever. I have friends who belong to this group, so I can do that. They don’t seem to mind it."
 
+    if by_bike:
+        show bg bike with Dissolve(0.5)
+    else:
+        show bg bus_inside with Dissolve(0.5)
     "You decide that this is none of your business and try to ignore the conversation, but the person who confronted Chad earlier doesn’t buy it."
     "It looks like things are going south…"
 
@@ -28,12 +36,20 @@ label dilemma1:
             "Try to cool it down.":
                 $renpy.fix_rollback()
                 "You attempt to break it off."
+                if by_bike:
+                    show bg bike_blurred with Dissolve(0.5)
+                else:
+                    show bg bus_inside_blurred with Dissolve(0.5)
                 if is_dutch:
                     j "Excuse me, but I would appreciate it if you would stop arguing. It stresses me out, please. Thank you."
                 else:
                     s "Excuse me, but I would appreciate it if you would stop arguing. It stresses me out, please. Thank you."
 
     hide chad with Dissolve(0.5)
+    if by_bike:
+        show bg bike with Dissolve(0.5)
+    else:
+        show bg bus_inside with Dissolve(0.5)
     "Unfortunately, your strategy doesn’t work and the two people continue disagreeing."
     "Hence, you try to distract yourself by texting your best friend, describing the situation you’re in."
     "They reply with: \“OK, yeah that sucks. I would try not to get involved in that, but what’s your own opinion about it?\”"
@@ -46,7 +62,7 @@ label dilemma1:
             "I don’t know, not enough context.":
                 $answer1 = "idk"
                 $renpy.fix_rollback()
-                $send_to_file("choices.txt", "\nDilemma 1: " + answer1)
+                $send_to_file("choices.txt", "\n\nDilemma 1: " + answer1)
                 if is_dutch:
                     j "\“I think I can’t be the judge of that. I don’t know these people at all.\”"
                 else:
@@ -54,7 +70,7 @@ label dilemma1:
             "No.":
                 $answer1 = "no"
                 $renpy.fix_rollback()
-                $send_to_file("choices.txt", "\nDilemma 1: " + answer1)
+                $send_to_file("choices.txt", "\n\nDilemma 1: " + answer1)
                 $score += 1
                 if is_dutch:
                     j "\“Of course not. People shouldn’t make jokes about this and try to come up with lame excuses when others call them out.\”"
@@ -64,7 +80,8 @@ label dilemma1:
     "You look up from your phone and notice the discussion has ended. At least verbally. "
 
     # Version A
-    call switch_chad
+    if versionA:
+        call switch_chad
 
     return
 
@@ -163,7 +180,8 @@ label dilemma3A:
             j "\“I understand your reasoning. Otherwise you have to invent a word that doesn’t even exist in your native language.\”"
 
     # Version A
-    call switch_carmen
+    if versionA:
+        call switch_carmen
 
     scene bg uithof_rainbow with Dissolve(0.5)
     if answer3a != "no_opinion":
@@ -187,7 +205,7 @@ label dilemma3A:
 label dilemma3B:
     "In front of the stairs, someone approaches you. They seem to have some kind of paper in their hand."
     show leo at above_right with moveinright
-    scene bg kbg_inside_blurred with Dissolve(0.5)
+    show bg kbg_inside_blurred with Dissolve(0.5)
     l "\“Hey, could I ask you something really quick?\”"
     if is_dutch:
         j "\“Of course.\”"
@@ -277,7 +295,7 @@ label dilemma4:
                 m "\“Actually yes! I didn’t want to ask anyone, thank my ego for that. But the door is too heavy.\”"
 
     # Version A
-    if friends:
+    if friends and versionA:
         call switch_matilda
 
     if answer4 != "ignore":
@@ -290,6 +308,7 @@ label dilemma4:
                 $renpy.fix_rollback()
             "Yes":
                 $renpy.fix_rollback()
+                show bg kbg_door_blurred with Dissolve(0.5)
                 if is_dutch:
                     j "\“Hey, I hope you don’t mind that I ask this, but how did you end up in a wheelchair?\”"
                     m "\“No, it’s fine. I’ve been in a car accident that resulted in a spinal cord injury. So my legs and feet are paralysed.\”"
@@ -317,12 +336,12 @@ label dilemma4:
                     m "\“I got to go now, but it was nice talking to you. Bye bye!\”"
                     s "\“I have to go too. See you later!\”"
 
+    show bg kbg_door with Dissolve(0.5)
     "Matilda disappears and you continue your way towards the lecture room."
 
     return
 
 label dilemma5:
-    show bg cosmos_lecture with Dissolve(0.5)
     "The group continues their conversation about their evening plans."
     "Some students are talking about going to café {i}BodyTalk.{/i}"
     show bg cosmos_lecture_blurred with Dissolve(0.5)
@@ -332,6 +351,7 @@ label dilemma5:
         s "\“What is that?\”"
     show chloe at above_right with moveinright
     chloe "\“It’s a LGBTQ+-friendly café. I went there with my girlfriend last time.\”"
+    show bg cosmos_lecture with Dissolve(0.5)
     "Suddenly, another student swamps Chloe with questions: Are you gay? Since when? How did you come out? How can you be so sure? Did you ever have a crush on one of your friends?"
     "The conversation abruptly seems to have turned into an interrogation."
     "You can see that Chloe doesn’t like it and shuts down."
@@ -355,12 +375,13 @@ label dilemma5:
             $score += 1
             $send_to_file("choices.txt", "\nDilemma 5: " + answer5)
             "You let the person know that they are making Chloe uncomfortable with their questions and suggest they should stop."
-            "You see that the girl is visibly relieved."
+            "You see that Chloe is visibly relieved."
         "Wait until the topic switches, but talk later in private":
             $answer5 = "wait"
             $renpy.fix_rollback()
             $send_to_file("choices.txt", "\nDilemma 5: " + answer5)
             "You wait until the topic switches and talk to Chloe privately how she feels about it."
+            show bg cosmos_lecture_blurred with Dissolve(0.5)
             chloe "\“I got myself back together and I’m OK now. Sorry you had to see my inner meltdown.\”"
             chloe "\“I just wish it wasn’t such a big deal every time I brought it up.\”"
             if is_dutch:
@@ -368,14 +389,16 @@ label dilemma5:
             else:
                 s "\“Don’t be sorry. The one that should be, is that person who started those invasive and inappropriate questions.\”"
             chloe "\“You’re right.\”"
+            show bg cosmos_lecture with Dissolve(0.5)
 
     # Version A
-    if friends:
+    if friends and versionA:
         call switch_chloe
 
     if answer5 == "switch_topic":
         "The group looks confused at you. However, they all sense the tense atmosphere, so they’re happy to switch the topic."
     if answer5 == "talk":
+        show bg cosmos_lecture_blurred with Dissolve(0.5)
         chloe "\“Thanks so much for standing up for me! I’m so done with the fact that it’s such a big deal every time I bring it up.\”"
         chloe "\“As if my whole personality is reduced to having a girlfriend instead of a boyfriend and I owe everyone an explanation.\”"
         if is_dutch:
@@ -422,6 +445,7 @@ label dilemma5:
                 chloe "\“No problem!\”"
 
     hide chloe with Dissolve(0.5)
+    show bg cosmos_lecture with Dissolve(0.5)
 
     return
 
@@ -452,7 +476,7 @@ label dilemma6:
             call dilemma6_yes
 
     # Version A
-    if friends:
+    if friends and versionA:
         call switch_val
 
     # Consequential choice, second chance
@@ -513,7 +537,7 @@ label dilemma7:
             "You find birthday songs silly anyway and walk away, while giving a quick side eye."
 
     # Version A
-    if friends:
+    if friends and versionA:
         call switch_shiro
 
     "Shiro walks away."
@@ -561,7 +585,7 @@ label bonus_dilemma:
             st "\“Thank you.\”"
 
     # Version A
-    if friends:
+    if friends and versionA:
         call switch_steph
 
     "Steph smiles and walks away."
@@ -571,6 +595,7 @@ label bonus_dilemma:
     return
 
 label dilemma8A:
+    show bg terrace_neude with Dissolve(0.5)
     "The topic changes and you talk more about the {i}hospi{/i}."
     if is_dutch:
         "Sam says that they heard a story from a friend who joined a student house as the only international student."

@@ -13,16 +13,20 @@ label lecture_room:
 
     "The professor starts talking."
     show max at above_right with moveinright
-    scene bg cosmos_lecture_blurred with Dissolve(0.5)
+    show bg cosmos_lecture_blurred with Dissolve(0.5)
     dr "\“Welcome everybody to your very first class of {i}Introduction to AI{/i}.\”"
     dr "\“I’m dr. Max Caulfield and I hope you all enjoyed your summer break. Let’s start.\”"
     hide max with Dissolve(0.5)
+    show bg cosmos_lecture with Dissolve(0.5)
     "Dr. Caulfield’s monologue continues for a while, but soon your thoughts drift away."
     "You wonder how many international students there are at UU."
 
     label nr_internationals:
+        $set_bet = False
         if friends:
             call show_npc
+            show bg cosmos_lecture_blurred with Dissolve(0.5)
+            $set_bet = True
             if is_dutch:
                 s "\“I read that there are more than 35,000 students in total, so I bet around 8,000 of them are international.\”"
                 s "\“Wait, let's make it a real bet. If your guess is the closest…\”"
@@ -76,9 +80,11 @@ label lecture_room:
                     j "\“Yep, a bet is a bet!\”"
             call hide_npc
 
+    show bg cosmos_lecture with Dissolve(0.5)
     "After 45 minutes, it’s time for a break. You hear some students talk about their plans for going out this evening."
     call show_avatar
     show chloe at above_right with moveinright
+    show bg cosmos_lecture_blurred with Dissolve(0.5)
     chloe "\“Should I go to {i}Ekko{/i} or {i}Tivo{/i}?\”"
     if is_dutch:
         j "\“What’s {i}Tivo{/i}?\”"
@@ -92,14 +98,12 @@ label lecture_room:
     else:
         s "\“Cool, thanks!\”"
     hide chloe with Dissolve(0.5)
-
+    show bg cosmos_lecture with Dissolve(0.5)
     "You’re excited about discovering Utrecht’s nightlife. The more reason to find a room as soon as possible."
 
     # Consequential choice
     call dilemma5
 
-    scene bg cosmos_lecture with Dissolve(0.5)
-    call show_avatar
     "Before you can continue the conversation, the break ends. Too soon, as always."
     "The professor begins with the second part of the lecture. Although you find it interesting, your brain is still in holiday mode, which makes it hard to stay focused for more than 10 minutes."
     "Only 45 more minutes left. This is roughly 4 x 10 minutes. Should be doable."
