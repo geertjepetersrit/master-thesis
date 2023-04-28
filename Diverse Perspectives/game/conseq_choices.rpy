@@ -184,7 +184,10 @@ label dilemma3A:
         call switch_carmen
 
     scene bg uithof_rainbow with Dissolve(0.5)
-    if answer3a != "no_opinion":
+    if answer3a == "no_opinion":
+        call show_all
+        "Carmen and her clique walk away."
+    else:
         "Before you can think further about it, Carmen says:"
         show bg uithof_rainbow_blurred with Dissolve(0.5)
         show carmen at above_left with moveinleft
@@ -498,9 +501,11 @@ label dilemma6:
             "Sure!":
                 call dilemma6_yes
 
+    "Val goes back to their seat, as the lecture is almost over."
+    hide val with Dissolve(0.5)
+
     # Second chance to befriend NPC if player has accepted Val and not gotten angry in Dilemma #2
     if not friends and answer6 == "yes" and answer2 != "yell":
-        hide val with Dissolve(0.5)
         call show_npc
         $friends = True
         "Another student approaches you."
@@ -522,12 +527,12 @@ label dilemma7:
     menu:
         "What do you do?"
 
-        "Observe what will happen further":
-            $answer7 = "observe"
+        "Join the group":
+            $answer7 = "join"
             $renpy.fix_rollback()
             $score -= 1
             $send_to_file("choices.txt", "\nDilemma 7: " + answer7)
-            "You stand still until the group finishes the song and walks away."
+            "You join the group with your excellent singing skills."
         "Ask in private if Shiro is OK":
             call dilemma7_ask
         "Walk past it":

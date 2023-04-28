@@ -169,8 +169,6 @@ label switch_val:
     scene bg cosmos_lecture with Dissolve(0.5)
     call show_avatar
     show val at above_right with moveinright
-    "Val goes back to her seat, as the lecture is almost over."
-    hide val with Dissolve(0.5)
 
     return
 
@@ -180,9 +178,11 @@ label switch_shiro:
     centered "Oh, there’s the switch! What are they thinking this time?"
     scene bg kbg_inside_blurred with Dissolve(0.5)
     show shiro at above_left with moveinleft
+    if answer7 == "join":
+        sh "{i}\“O my god why are you joining too? As if this situation couldn’t get worse…\”{/i}"
     if answer7 == "ask":
         sh "{i}\“I’m so glad that you asked. This is just the boost I needed to put an end to this nonsense.\”{/i}"
-    else:
+    if answer7 == "ignore":
         sh "{i}\“Nobody comments on this… Maybe they don’t realise that their ‘good’ intentions come out really bad.\”{/i}"
 
     # Switch back
