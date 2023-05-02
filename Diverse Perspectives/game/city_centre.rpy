@@ -2,7 +2,7 @@ label city_centre:
     label go_to_cc:
         if by_bike:
             scene bg minnaert_bike_shed with Dissolve(0.5)
-            call show_all
+            call show_all from _call_show_all_2
             "As you leave the KBG, you look for your bike."
             if friends:
                 if is_dutch:
@@ -10,12 +10,12 @@ label city_centre:
                 else:
                     "Jip is by bike too."
             scene bg uithof_rainbow with Dissolve(0.5)
-            call show_all
+            call show_all from _call_show_all_3
             "You bike towards the city centre and park your bike in one of the sheds underground."
             "The shed is guarded and the first 24 hours are free. Plus, you don’t risk that your bike will be taken away by the municipality."
         else:
             scene bg usp_bus_stop with Dissolve(0.5)
-            call show_all
+            call show_all from _call_show_all_4
             "As you leave the KBG, you look for the bus stop."
             if friends:
                 if is_dutch:
@@ -23,12 +23,12 @@ label city_centre:
                 else:
                     "Jip is by bus too."
             scene bg usp_bus with Dissolve(0.5)
-            call show_all
+            call show_all from _call_show_all_5
             "You take bus 28 and get off at the stop called ‘Neude’"
 
     label dom_tower:
         scene bg city_centre with Dissolve(0.5)
-        call show_all
+        call show_all from _call_show_all_6
         "You walk along the {i}Oudegracht{/i}, which is a street in the heart of the centre. The length of the street is almost 2 km!"
         "It’s also the street where the tiniest house in Utrecht is located: at number 133. At the other side of the street is the oldest house in Utrecht: at number 114."
         "In fact, that house is named {i}Drakenborch{/i} and used to be a castle."
@@ -36,7 +36,7 @@ label city_centre:
         "From the {i}Oudegracht{/i}, you could already see the Dom Tower. Impressive!"
 
         scene bg dom_square with Dissolve(0.5)
-        call show_all
+        call show_all from _call_show_all_7
         "After a few minutes of walking, you find yourself at the Dom Square, looking at the Dom Tower. You are wondering how tall the Dom actually is."
 
         # Only possible when friends
@@ -58,17 +58,17 @@ label city_centre:
                     s "\“I’ll skip this one.\”"
 
         show bg dom_square with Dissolve(0.5)
-        call dom_height
+        call dom_height from _call_dom_height
 
     "You’ve also read on the internet that Utrecht is the city where Miffy was born. Or in Dutch: {i}Nijntje{/i}."
     "You want to visit Miffy’s statue at the {i}Nijntje pleintje{/i} (Miffy square)."
     scene bg dom_tower with Dissolve(0.5)
-    call show_all
+    call show_all from _call_show_all_8
     "As you’re walking, you cross the {i}Janskerkhof{/i}. This place has the oldest bookstore in the Netherlands, because the first Dutch book was printed in Utrecht."
     "Moreover, every Saturday, the parking space at the {i}Janskerkhof{/i} turns into a flower market."
 
     scene bg terrace_neude with Dissolve(0.5)
-    call show_all
+    call show_all from _call_show_all_9
     "After visiting the Miffy square, you’re a bit tired, so you decide to have a drink to sit down and rest."
     "There’s a free spot on the terrace."
     "Because of the many canals in the centre, a lot of cafés still receive their beer by boat. In the middle ages, the beer was even brewed by using the water from the canals. Ew!"
@@ -77,7 +77,7 @@ label city_centre:
 
     # Trivial choice
     label terrace_drink:
-        call drink_order
+        call drink_order from _call_drink_order
 
         if is_dutch:
             j "\“A [order], please!\”"
@@ -94,18 +94,18 @@ label city_centre:
 
         if friends:
             # Trivial choice
-            call colour
-            call dilemma8A
+            call colour from _call_colour
+            call dilemma8A from _call_dilemma8A
 
         if not friends:
-            call dilemma8B
+            call dilemma8B from _call_dilemma8B
 
     label dinner:
         show bg terrace_neude with Dissolve(0.5)
         "After you finish your drink, your stomach starts rumbling. Time for dinner!"
 
         # Trivial choice
-        call dinner_choice
+        call dinner_choice from _call_dinner_choice
 
         "The pro of this plan is dinner, but the con is making it. But it’s at least something you like."
         if is_dutch:
@@ -118,4 +118,4 @@ label city_centre:
         "Since it’s the longest shopping street in the Netherlands, finding a supermarket there shouldn’t be too difficult."
         "After you pay, you start walking."
 
-    call supermarket
+    call supermarket from _call_supermarket

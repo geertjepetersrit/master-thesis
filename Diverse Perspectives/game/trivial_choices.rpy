@@ -186,7 +186,7 @@ label dom_height:
         "112 metres":
             $height = "correct"
             $renpy.fix_rollback()
-            call bonus_dilemma
+            call bonus_dilemma from _call_bonus_dilemma
         "224 metres":
             $height = "wrong"
             $renpy.fix_rollback()

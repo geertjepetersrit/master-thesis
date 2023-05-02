@@ -11,23 +11,23 @@ label at_home:
     "\[alarm sound beeps\] You wake up and look at your phone."
 
     # Trivial choice
-    call alarm
+    call alarm from _call_alarm
 
     "You stretch your arms and sit up straight in your bed. What day is it?"
     "Oh right, It’s Monday, which means that the summer break has officially ended. Sad."
 
     # Trivial choice
-    call gender
+    call gender from _call_gender
 
     "Then you try to remember more."
 
     # Trivial choice
-    call country
+    call country from _call_country
 
     "It all comes back to you now. Your name is..."
 
     if is_dutch:
-        call show_avatar
+        call show_avatar from _call_show_avatar
         "Jip and today is your first day at Utrecht University."
         "While you have visited several universities on many open days, Utrecht is all you wanted."
         "The city has something magical. While it has canals like Amsterdam, it’s smaller and thus more cosy. However, with over 360,000 inhabitants, Utrecht is not small."
@@ -36,7 +36,7 @@ label at_home:
         "As you’re in your early 20s, you also can’t wait to live on your own and have your parents out of your hair. It’s about time."
         "The only downside of moving to Utrecht will be that you have to leave Stitch behind, your precious cat."
     else:
-        call show_avatar
+        call show_avatar from _call_show_avatar_1
         "Sam and today is your first day at Utrecht University."
         "After carefully researching options for studying abroad, Utrecht stood out for you."
         "The city has something magical. While it has canals like Amsterdam, it’s smaller and thus more cosy. However, with over 360,000 inhabitants, Utrecht is not small."
@@ -48,10 +48,10 @@ label at_home:
     "You get out of your bed and open your suitcase for some clothes. Yeah, that outfit will do."
 
     scene bg hostel_lobby with Dissolve(0.5)
-    call show_avatar
+    call show_avatar from _call_show_avatar_2
 
     # Trivial choice
-    call breakfast
+    call breakfast from _call_breakfast
 
     # Go to Travelling scene
-    call travelling
+    call travelling from _call_travelling

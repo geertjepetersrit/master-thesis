@@ -7,13 +7,13 @@ label dilemma1:
         show bg bus_inside_blurred with Dissolve(0.5)
     c "\“Hehe, of course those {i}tacoheads{/i} take as much free food samples as possible.\”"
     hide chad with Dissolve(0.5)
-    call show_npc
+    call show_npc from _call_show_npc_2
     if is_dutch:
         s "What’s so funny about it? I think it’s kinda offensive."
     else:
         j "What’s so funny about it? I think it’s kinda offensive."
 
-    call hide_npc
+    call hide_npc from _call_hide_npc
     show chad at above_right with moveinright
     c "Whatever. I have friends who belong to this group, so I can do that. They don’t seem to mind it."
 
@@ -81,7 +81,7 @@ label dilemma1:
 
     # Version A
     if versionA:
-        call switch_chad
+        call switch_chad from _call_switch_chad
 
     return
 
@@ -108,12 +108,12 @@ label dilemma2:
 
 label dilemma3A:
     "A group of students passes you. You hear them talking about pronouns."
-    call hide_npc
+    call hide_npc from _call_hide_npc_1
     show carmen at above_right with moveinright
     carm "\“These non-binary pronouns don’t work for me. I find it too much effort, he’s not here and I don’t like him anyways.\”"
     carm "\“Plus, these pronouns don’t even exist in my native language. So I’ll just stick to using {i}him{/i}.\”"
     hide carmen with Dissolve(0.5)
-    call show_npc
+    call show_npc from _call_show_npc_3
     if is_dutch:
         s "\“O my god. Did you hear that?\”"
         j "\“Yes.\”"
@@ -157,7 +157,7 @@ label dilemma3A:
         j "\“Yeah, me too.\”"
 
     if answer3a == "disagree":
-        call hide_avatar
+        call hide_avatar from _call_hide_avatar
         show carmen at above_left with moveinleft
         if is_dutch:
             "Before you know it, Sam meddles in the conversation."
@@ -170,7 +170,7 @@ label dilemma3A:
     elif answer3a == "no_opinion":
         "You both don’t pay further attention to the conversation and wait until they pass by."
     else:
-        call hide_avatar
+        call hide_avatar from _call_hide_avatar_1
         show carmen at above_left with moveinleft
         if is_dutch:
             "Before you know it, Sam meddles in the conversation."
@@ -181,11 +181,11 @@ label dilemma3A:
 
     # Version A
     if versionA:
-        call switch_carmen
+        call switch_carmen from _call_switch_carmen
 
     scene bg uithof_rainbow with Dissolve(0.5)
     if answer3a == "no_opinion":
-        call show_all
+        call show_all from _call_show_all_10
         "Carmen and her clique walk away."
     else:
         "Before you can think further about it, Carmen says:"
@@ -194,10 +194,10 @@ label dilemma3A:
         if answer3a == "disagree":
             carm "\“I tried asking his pronouns once, but they just don’t stick with me. I can’t get used to it and I hardly find it the effort, since I rarely see that person.\”"
             if is_dutch:
-                call show_npc
+                call show_npc from _call_show_npc_4
                 s "\“OK, but I think you should give it another shot and ask again. It may not seem a big deal to you, but it can mean a lot to them.\”"
             else:
-                call show_npc
+                call show_npc from _call_show_npc_5
                 j "\“OK, but I think you should give it another shot and ask again. It may not seem a big deal to you, but it can mean a lot to them.\”"
             carm "\“Hmm, maybe you do have a point… I’ll think about it.\”"
         else:
@@ -264,7 +264,7 @@ label dilemma3B:
 
 label dilemma4:
     scene bg kbg_door with Dissolve(0.5)
-    call show_avatar
+    call show_avatar from _call_show_avatar_4
     show matilda at above_right with moveinright
     "While you are walking in the building, you see a girl who’s in a wheelchair."
     "Matilda’s struggling to open the door, but she hasn’t asked for any help."
@@ -299,7 +299,7 @@ label dilemma4:
 
     # Version A
     if friends and versionA:
-        call switch_matilda
+        call switch_matilda from _call_switch_matilda
 
     if answer4 != "ignore":
         "You wonder why Matilda is in a wheelchair."
@@ -396,7 +396,7 @@ label dilemma5:
 
     # Version A
     if friends and versionA:
-        call switch_chloe
+        call switch_chloe from _call_switch_chloe
 
     if answer5 == "switch_topic":
         "The group looks confused at you. However, they all sense the tense atmosphere, so they’re happy to switch the topic."
@@ -418,7 +418,7 @@ label dilemma5:
             chloe "\“Can I get your number? Since you helped me, I want to take you out for a drink.\”"
 
             # Trivial choice
-            call phone_nr
+            call phone_nr from _call_phone_nr
             if give_nr:
                 j "\“Here it is. Maybe your girlfriend could join too? I would like to meet her.\”"
                 chloe "\“Sure!\”"
@@ -439,7 +439,7 @@ label dilemma5:
             chloe "\“Can I get your number? Since you helped me, I want to take you out for a drink.\”"
 
             # Trivial choice
-            call phone_nr
+            call phone_nr from _call_phone_nr_1
             if give_nr:
                 s "\“Here it is. Maybe your girlfriend could join too? I would like to meet her.\”"
                 chloe "\“Sure!\”"
@@ -464,7 +464,7 @@ label dilemma6:
         "What is your response?"
 
         "Sorry, but no.":
-            call dilemma6_no
+            call dilemma6_no from _call_dilemma6_no
         "Let me think about it.":
             $answer6 = "maybe"
             $renpy.fix_rollback()
@@ -476,11 +476,11 @@ label dilemma6:
                 s "\“Wait, let me check with this other person real quick.\”"
             v "\“OK, please let me know later.\”"
         "Sure!":
-            call dilemma6_yes
+            call dilemma6_yes from _call_dilemma6_yes
 
     # Version A
     if friends and versionA:
-        call switch_val
+        call switch_val from _call_switch_val
 
     # Consequential choice, second chance
     if answer6 == "maybe":
@@ -488,7 +488,7 @@ label dilemma6:
             scene bg black with Dissolve(0.5)
             centered "A short moment later…"
             scene bg cosmos_lecture_blurred with Dissolve(0.5)
-            call show_avatar
+            call show_avatar from _call_show_avatar_5
             show val at above_right with moveinright
 
         "Val approaches you again."
@@ -497,28 +497,28 @@ label dilemma6:
             "Can I join your group?"
 
             "Sorry, but no.":
-                call dilemma6_no
+                call dilemma6_no from _call_dilemma6_no_1
             "Sure!":
-                call dilemma6_yes
+                call dilemma6_yes from _call_dilemma6_yes_1
 
     "Val goes back to their seat, as the lecture is almost over."
     hide val with Dissolve(0.5)
 
     # Second chance to befriend NPC if player has accepted Val and not gotten angry in Dilemma #2
     if not friends and answer6 == "yes" and answer2 != "yell":
-        call show_npc
+        call show_npc from _call_show_npc_6
         $friends = True
         "Another student approaches you."
         if is_dutch:
             s "\“Can I also join your group?\”"
             s "\“I just arrived in the Netherlands. Today is my first day on campus.\”"
             j "\“Of course!\”"
-            call convo_befriend
+            call convo_befriend from _call_convo_befriend
         else:
             j "\“Can I also join your group?\”"
             j "\“Today is my first day on campus.\”"
             s "\“Of course!\”"
-            call convo_befriend
+            call convo_befriend from _call_convo_befriend_1
 
     return
 
@@ -534,7 +534,7 @@ label dilemma7:
             $send_to_file("choices.txt", "\nDilemma 7: " + answer7)
             "You join the group with your excellent singing skills."
         "Ask in private if Shiro is OK":
-            call dilemma7_ask
+            call dilemma7_ask from _call_dilemma7_ask
         "Walk past it":
             $answer7 = "ignore"
             $renpy.fix_rollback
@@ -543,7 +543,7 @@ label dilemma7:
 
     # Version A
     if friends and versionA:
-        call switch_shiro
+        call switch_shiro from _call_switch_shiro
 
     "Shiro walks away."
     hide shiro with Dissolve(0.5)
@@ -552,7 +552,7 @@ label dilemma7:
 
 label bonus_dilemma:
     if friends:
-        call hide_npc
+        call hide_npc from _call_hide_npc_2
     show steph at above_right with moveinright
     show bg dom_square_blurred with Dissolve(0.5)
     st "\“In case you’re wondering, the Dom is actually 112 metres and 32 centimetres! To get to the top, you have to take 465 steps.\”"
@@ -591,11 +591,11 @@ label bonus_dilemma:
 
     # Version A
     if friends and versionA:
-        call switch_steph
+        call switch_steph from _call_switch_steph
 
     "Steph smiles and walks away."
     hide steph with Dissolve(0.5)
-    call show_all
+    call show_all from _call_show_all_11
 
     return
 
@@ -722,7 +722,7 @@ label dilemma9:
 label dilemma10:
     "After paying for your groceries, you go home and eat dinner together."
     scene bg hostel_lobby with Dissolve(0.5)
-    call show_all
+    call show_all from _call_show_all_12
     show bg hostel_lobby_blurred with Dissolve(0.5)
     if is_dutch:
         s "\“Thanks for inviting me to your place! I’m staying in a hostel too currently.\”"
@@ -788,7 +788,7 @@ label dilemma10:
                         j "\“Actually, I do disagree. People have their own reasons to be vegan. I think it’s unfair you criticise them for that.\”"
                     else:
                         s "\“Actually, I do disagree. People have their own reasons to be vegan. I think it’s unfair you criticise them for that.\”"
-                    call dilemma10_disagree
+                    call dilemma10_disagree from _call_dilemma10_disagree
         "Interrupt them by disagreeing":
             $answer10 = "disagree"
             $renpy.fix_rollback()
@@ -796,6 +796,6 @@ label dilemma10:
             $send_to_file("choices.txt", "\nDilemma 10: " + answer10)
             "You interrupt them and explain the reasons why people could be vegan."
             "Your friend shouldn’t criticise them for that, that’s unfair."
-            call dilemma10_disagree
+            call dilemma10_disagree from _call_dilemma10_disagree_1
 
     return

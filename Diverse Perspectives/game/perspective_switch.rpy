@@ -14,10 +14,10 @@ label switch_chad:
 
     if by_bike:
         scene bg bike_blurred with Dissolve(0.5)
-        call ps_chad
+        call ps_chad from _call_ps_chad
     else:
         scene bg bus_inside_blurred with Dissolve(0.5)
-        call ps_chad
+        call ps_chad from _call_ps_chad_1
 
     # Switch back
     scene bg black with Dissolve(0.5)
@@ -29,13 +29,13 @@ label switch_chad:
     """
     if by_bike:
         scene bg bike_blurred with Dissolve(0.5)
-        call show_avatar
-        call convo_chad
+        call show_avatar from _call_show_avatar_8
+        call convo_chad from _call_convo_chad
 
     else:
         scene bg bus_inside_blurred with Dissolve(0.5)
-        call show_avatar
-        call convo_chad
+        call show_avatar from _call_show_avatar_9
+        call convo_chad from _call_convo_chad_1
 
     scene bg black with Dissolve(0.5)
 
@@ -116,7 +116,7 @@ label switch_matilda:
     scene bg black with Dissolve(0.5)
     centered "Within the blink of an eye you’re back in your own body."
     scene bg kbg_door with Dissolve(0.5)
-    call show_avatar
+    call show_avatar from _call_show_avatar_10
     show matilda at above_right with moveinright
 
     return
@@ -145,7 +145,7 @@ label switch_chloe:
     scene bg black with Dissolve(0.5)
     centered "Nevermind…"
     scene bg cosmos_lecture with Dissolve(0.5)
-    call show_avatar
+    call show_avatar from _call_show_avatar_11
     show chloe at above_right with moveinright
 
     return
@@ -167,7 +167,7 @@ label switch_val:
     scene bg black with Dissolve(0.5)
     centered "Reverse poof! Now you’re back to being your old self."
     scene bg cosmos_lecture with Dissolve(0.5)
-    call show_avatar
+    call show_avatar from _call_show_avatar_12
     show val at above_right with moveinright
 
     return
@@ -189,7 +189,7 @@ label switch_shiro:
     scene bg black with Dissolve(0.5)
     centered "And now you’re back to normal."
     scene bg kbg_inside with Dissolve(0.5)
-    call show_avatar
+    call show_avatar from _call_show_avatar_13
     show shiro at above_right with moveinright
 
     if answer7 == "ignore":
@@ -204,7 +204,7 @@ label switch_shiro:
                 $renpy.fix_rollback()
                 "Sorry, but you can’t take the whole world’s weight on your shoulders."
             "Ask if Shiro is OK":
-                call dilemma7_ask
+                call dilemma7_ask from _call_dilemma7_ask_1
 
     return
 
@@ -223,7 +223,7 @@ label switch_steph:
     scene bg black with Dissolve(0.5)
     centered "Back to hearing only your own thoughts."
     scene bg dom_square with Dissolve(0.5)
-    call show_avatar
+    call show_avatar from _call_show_avatar_14
     show steph at above_right with moveinright
 
     return

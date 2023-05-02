@@ -1,29 +1,27 @@
-
-
----
-
 Version A
 
 Player 1
 
 Female
-Abroad
+Dutch
 
 Dilemma 1: no
 Dilemma 2: dodge
-Dilemma 3B: sceptic
-Dilemma 4: help
-Dilemma 5: switch_topic
-Dilemma 6: maybe
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: talk
+Dilemma 5: talk
+Dilemma 5: talk
 Dilemma 6: yes
-Dilemma 7: join
-Dilemma 8A: English
-Dilemma 9: halal
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: both
+Dilemma 9: skip
 Dilemma 10: disagree
 
-Neutral ending
+Good ending
 
-The total score is 4
+The total score is 9
 
 ---
 
@@ -32,6 +30,79 @@ Version B
 Player 2
 
 Male
+Dutch
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ignore
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: halal
+Dilemma 10: disagree
+
+Good ending
+
+The total score is 9
+
+---
+
+Version A
+
+Player 3
+
+Male
+Abroad
+
+Dilemma 1: idk
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: help
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: both
+Dilemma 9: skip
+Dilemma 10: disagree
+
+Neutral ending
+
+The total score is 5
+
+---
+
+Version B
+
+Player 4
+
+Female
+Abroad
+
+Dilemma 1: no
+Dilemma 2: yell
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: wait
+Dilemma 6: yes
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8B: English
+
+Neutral ending
+
+The total score is 7
+
+---
+
+Version A
+
+Player 5
+
+Female
 Abroad
 
 Dilemma 1: no
@@ -44,8 +115,82 @@ Dilemma 7: ask
 Bonus dilemma: thank_support
 Dilemma 8A: English
 Dilemma 9: halal
+Dilemma 10: nothing
+
+Good ending
+
+The total score is 12
+
+---
+
+Version B
+
+Player 6
+
+Female
+Abroad
+
+Dilemma 1: no
+Dilemma 2: yell
+Dilemma 3B: support
+Dilemma 4: ignore
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8B: summary
+
+Bad ending
+
+The total score is 3
+
+---
+
+Version A
+
+Player 7
+
+Female
+Dutch
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: talk
+Dilemma 6: yes
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: skip
 Dilemma 10: disagree
 
 Good ending
 
-The total score is 13
+The total score is 10
+
+---
+
+Version B
+
+Player 8
+
+Female
+Dutch
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: help
+Dilemma 5: switch_topic
+Dilemma 6: maybe
+Dilemma 6: yes
+Dilemma 7: ignore
+Bonus dilemma: thank_support
+Dilemma 8A: both
+Dilemma 9: skip
+Dilemma 10: disagree
+
+Neutral ending
+
+The total score is 5

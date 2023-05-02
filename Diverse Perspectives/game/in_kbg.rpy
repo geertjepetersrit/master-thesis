@@ -1,6 +1,6 @@
 label in_kbg:
     scene bg kbg_inside with Dissolve(0.5)
-    call show_all
+    call show_all from _call_show_all_13
     "Class has ended and you want to explore the city centre."
     if is_dutch:
         "You’d also like to visit the skate ramp in the {i}Griftpark{/i}. The pictures on the internet looked really cool."
@@ -16,10 +16,10 @@ label in_kbg:
     "As you walk out of the lecture room, you see that the exit of the building is on the ground floor."
 
     # Trivial choice
-    call reach_exit
+    call reach_exit from _call_reach_exit
 
     if friends:
-        call hide_npc
+        call hide_npc from _call_hide_npc_3
     show shiro at above_right with moveinright
     "While you are heading outside you hear a few people singing a birthday song. It seems like it’s the birthday of an Asian student, Shiro."
     "After people finish the classical {i}Happy Birthday{/i} song, they continue with {i}Hanky Panky Shanghai{/i}."
@@ -27,7 +27,7 @@ label in_kbg:
     "It looks like the majority enjoys singing the song."
 
     # Consequential choice
-    call dilemma7
+    call dilemma7 from _call_dilemma7
 
     label kingsday:
         show bg kbg_inside with Dissolve(0.5)
@@ -40,7 +40,7 @@ label in_kbg:
 
         if friends:
             show bg kbg_inside_blurred with Dissolve(0.5)
-            call show_npc
+            call show_npc from _call_show_npc_8
             s "\“Hey, can I ask you a question?\”"
             j "\“Of course!\”"
             s "\“Why do Dutch people have a thing for orange stuff? And especially during some kind of celebration day? I don’t get it.\”"
@@ -51,4 +51,4 @@ label in_kbg:
             s "\“Sounds good, thanks for the tips!\”"
             j "\“You’re welcome!\”"
 
-    call city_centre
+    call city_centre from _call_city_centre

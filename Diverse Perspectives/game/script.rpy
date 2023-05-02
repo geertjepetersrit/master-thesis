@@ -41,7 +41,7 @@ label start:
     # Leave monologue mode
 
     # Go to At Home scene
-    call at_home
+    call at_home from _call_at_home
 
     # Write down the total score in a .txt file
     $send_to_file("choices.txt", "\n\nThe total score is " + str(score))

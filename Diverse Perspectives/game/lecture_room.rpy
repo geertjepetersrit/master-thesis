@@ -1,6 +1,6 @@
 label lecture_room:
     scene bg cosmos_lecture with Dissolve(0.5)
-    call show_all
+    call show_all from _call_show_all_14
     "Big, grey letters on the wall spell {i}Cosmos{/i}."
     "That must be the lecture room. You open the door and enter just in time. Quickly, you pick a seat."
 
@@ -9,7 +9,7 @@ label lecture_room:
             "Sam sits next to you."
         else:
             "Jip sits next to you."
-        call hide_npc
+        call hide_npc from _call_hide_npc_4
 
     "The professor starts talking."
     show max at above_right with moveinright
@@ -24,7 +24,7 @@ label lecture_room:
     label nr_internationals:
         $set_bet = False
         if friends:
-            call show_npc
+            call show_npc from _call_show_npc_9
             show bg cosmos_lecture_blurred with Dissolve(0.5)
             $set_bet = True
             if is_dutch:
@@ -47,7 +47,7 @@ label lecture_room:
                 s "\“Deal.\”"
 
         # Trivial choice
-        call how_many
+        call how_many from _call_how_many
 
         "After consulting your best friend Google, you see that there are almost 6,000 international students."
         if is_dutch:
@@ -78,11 +78,11 @@ label lecture_room:
                 else:
                     s "\“I guess I owe you a drink now.\”"
                     j "\“Yep, a bet is a bet!\”"
-            call hide_npc
+            call hide_npc from _call_hide_npc_5
 
     show bg cosmos_lecture with Dissolve(0.5)
     "After 45 minutes, it’s time for a break. You hear some students talk about their plans for going out this evening."
-    call show_avatar
+    call show_avatar from _call_show_avatar_7
     show chloe at above_right with moveinright
     show bg cosmos_lecture_blurred with Dissolve(0.5)
     chloe "\“Should I go to {i}Ekko{/i} or {i}Tivo{/i}?\”"
@@ -102,7 +102,7 @@ label lecture_room:
     "You’re excited about discovering Utrecht’s nightlife. The more reason to find a room as soon as possible."
 
     # Consequential choice
-    call dilemma5
+    call dilemma5 from _call_dilemma5
 
     "Before you can continue the conversation, the break ends. Too soon, as always."
     "The professor begins with the second part of the lecture. Although you find it interesting, your brain is still in holiday mode, which makes it hard to stay focused for more than 10 minutes."
@@ -110,14 +110,14 @@ label lecture_room:
     "After Max Caulfield explains the group project, it’s time to form groups of three and you are free to form them yourselves."
 
     if friends:
-        call show_npc
+        call show_npc from _call_show_npc_10
         if is_dutch:
             "You team up with Sam. It’s nice to have at least one familiar face in your group."
         else:
             "You team up with Jip. It’s nice to have at least one familiar face in your group."
 
     # Consequential choice
-    call hide_npc
-    call dilemma6
+    call hide_npc from _call_hide_npc_6
+    call dilemma6 from _call_dilemma6
 
-    call in_kbg
+    call in_kbg from _call_in_kbg

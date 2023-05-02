@@ -1,13 +1,13 @@
 label at_hospi:
     scene bg huize_peereboom with Dissolve(0.5)
-    call show_all
+    call show_all from _call_show_all
 
     if friends:
         "You go to the {i}hospi{/i} together. This also makes you less nervous, which gives you a good first impression at {i}Huize Peereboom{/i}."
     else:
         "You arrive at the house. You can’t help it, but you’re a little nervous. Or a lot."
         "As you walk through the front door, you see the person you’ve run into earlier today."
-        call show_npc
+        call show_npc from _call_show_npc
         show bg huize_peereboom_blurred with Dissolve(0.5)
         if score >= 6:
             $score += 1
@@ -19,7 +19,7 @@ label at_hospi:
             "The person ignores you, which makes you even more nervous. This doesn’t help you to make a good first impression."
 
     scene bg hospi with Dissolve(0.5)
-    call show_all
+    call show_all from _call_show_all_1
     "You enter the living room and take a seat. There are quite some people and Matilda is here too! Wait, she lives here??"
     show bg hospi_blurred with Dissolve(0.5)
     "You remember the encounter you had with your potential new roommate earlier today…"
@@ -30,7 +30,7 @@ label at_hospi:
         else:
             "You sit next to Jip."
     else:
-        call show_npc
+        call show_npc from _call_show_npc_1
         "You sit next to a familiar face."
 
     label ending:
@@ -70,7 +70,7 @@ label at_hospi:
             """
 
         scene bg hostel_room with Dissolve(0.5)
-        call show_avatar
+        call show_avatar from _call_show_avatar_3
         "You close your eyes and fall asleep."
 
     label recap:

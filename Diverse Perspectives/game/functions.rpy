@@ -68,9 +68,9 @@ label hide_npc:
     return
 
 label show_all:
-    call show_avatar
+    call show_avatar from _call_show_avatar_6
     if friends:
-        call show_npc
+        call show_npc from _call_show_npc_7
 
     return
 
