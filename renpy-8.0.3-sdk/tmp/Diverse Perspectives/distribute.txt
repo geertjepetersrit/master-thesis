@@ -221,6 +221,7 @@ game/uu_campus.rpy matches ** (['all']).
 game/uu_campus.rpy.bak matches **.bak (None).
 game/uu_campus.rpyc matches ** (['all']).
 log.txt matches log.txt (None).
+old-game/ matches old-game/ (None).
 traceback.txt matches traceback.txt (None).
 doc/ doesn't match anything.
 doc/ matches None (None).

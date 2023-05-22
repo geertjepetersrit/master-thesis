@@ -62,7 +62,7 @@ label dilemma1:
             "I don’t know, not enough context.":
                 $answer1 = "idk"
                 $renpy.fix_rollback()
-                $send_to_file("choices.txt", "\n\nDilemma 1: " + answer1)
+#                $send_to_file("choices.txt", "\n\nDilemma 1: " + answer1)
                 if is_dutch:
                     j "\“I think I can’t be the judge of that. I don’t know these people at all.\”"
                 else:
@@ -70,7 +70,7 @@ label dilemma1:
             "No.":
                 $answer1 = "no"
                 $renpy.fix_rollback()
-                $send_to_file("choices.txt", "\n\nDilemma 1: " + answer1)
+#                $send_to_file("choices.txt", "\n\nDilemma 1: " + answer1)
                 $score += 1
                 if is_dutch:
                     j "\“Of course not. People shouldn’t make jokes about this and try to come up with lame excuses when others call them out.\”"
@@ -80,9 +80,10 @@ label dilemma1:
     "You look up from your phone and notice the discussion has ended. At least verbally. "
 
     # Version A
-    if versionA:
-        call switch_chad from _call_switch_chad
+#    if versionA:
+#        call switch_chad from _call_switch_chad
 
+    call switch_chad from _call_switch_chad
     return
 
 label dilemma2:
@@ -92,17 +93,17 @@ label dilemma2:
         "Dodge them and pretend it didn’t happen.":
             $answer2 = "dodge"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nDilemma 2: " + answer2)
+#            $send_to_file("choices.txt", "\nDilemma 2: " + answer2)
         "Yell at them and get angry.":
             $answer2 = "yell"
             $renpy.fix_rollback()
             $score -= 1
-            $send_to_file("choices.txt", "\nDilemma 2: " + answer2)
+#            $send_to_file("choices.txt", "\nDilemma 2: " + answer2)
         "Stop and ask them where they are going.":
             $answer2 = "stop"
             $renpy.fix_rollback()
             $score += 1
-            $send_to_file("choices.txt", "\nDilemma 2: " + answer2)
+#            $send_to_file("choices.txt", "\nDilemma 2: " + answer2)
 
     return
 
@@ -129,7 +130,7 @@ label dilemma3A:
             $answer3a = "disagree"
             $renpy.fix_rollback()
             $score += 1
-            $send_to_file("choices.txt", "\nDilemma 3A: " + answer3a)
+#            $send_to_file("choices.txt", "\nDilemma 3A: " + answer3a)
             if is_dutch:
                 j "\“If somebody explained their pronouns, I think you should try to use them. It could mean a lot to them.\”"
             else:
@@ -137,7 +138,7 @@ label dilemma3A:
         "No opinion.":
             $answer3a = "no_opinion"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nDilemma 3A: " + answer3a)
+#            $send_to_file("choices.txt", "\nDilemma 3A: " + answer3a)
             if is_dutch:
                 j "\“To be honest, I don’t really have an opinion about it.\”"
             else:
@@ -145,7 +146,7 @@ label dilemma3A:
         "I could see why they would see it that way.":
             $answer3a = "agree"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nDilemma 3A: " + answer3a)
+#            $send_to_file("choices.txt", "\nDilemma 3A: " + answer3a)
             if is_dutch:
                 j "\“From their perspective, I could see why they would think like that.\”"
             else:
@@ -180,8 +181,9 @@ label dilemma3A:
             j "\“I understand your reasoning. Otherwise you have to invent a word that doesn’t even exist in your native language.\”"
 
     # Version A
-    if versionA:
-        call switch_carmen from _call_switch_carmen
+#    if versionA:
+#        call switch_carmen from _call_switch_carmen
+    call switch_carmen from _call_switch_carmen
 
     scene bg uithof_rainbow with Dissolve(0.5)
     if answer3a == "no_opinion":
@@ -226,7 +228,7 @@ label dilemma3B:
         "Support it.":
             $answer3b = "support"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nDilemma 3B: " + answer3b)
+#            $send_to_file("choices.txt", "\nDilemma 3B: " + answer3b)
             $score += 1
             if is_dutch:
                 j "\“I think it’s a good idea. I think equipping people with more knowledge about the topic will definitely help. It’ll hopefully solve a lot of misunderstandings.\”"
@@ -235,7 +237,7 @@ label dilemma3B:
         "No opinion.":
             $answer3b = "no_opinion"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nDilemma 3B: " + answer3b)
+#            $send_to_file("choices.txt", "\nDilemma 3B: " + answer3b)
             if is_dutch:
                 j "\“To be honest, I don’t know, because it doesn’t cross my mind often.\”"
             else:
@@ -243,7 +245,7 @@ label dilemma3B:
         "Be sceptical.":
             $answer3b = "sceptic"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nDilemma 3B: " + answer3b)
+#            $send_to_file("choices.txt", "\nDilemma 3B: " + answer3b)
             if is_dutch:
                 j "\“On the one hand I think it’s good, but on the other hand, making people aware of their marginalised positions could have negative consequences, especially if it’s not in their power to change it.\”"
                 l "\“That’s true, I haven’t looked at it that way.\”"
@@ -278,13 +280,13 @@ label dilemma4:
             $answer4 = "ignore"
             $renpy.fix_rollback()
             $score -= 1
-            $send_to_file("choices.txt", "\nDilemma 4: " + answer4)
+#            $send_to_file("choices.txt", "\nDilemma 4: " + answer4)
             "You pretend not to see Matilda’s struggle."
             "When she’s looking at you, you quickly look in another direction. This isn’t your finest moment."
         "Immediately help her":
             $answer4 = "help"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nDilemma 4: " + answer4)
+#            $send_to_file("choices.txt", "\nDilemma 4: " + answer4)
             "You rush towards the door to hold it open."
             "Matilda looks at you with slight confusion, but quickly says:"
             m "\“I almost got it, but thanks!\”"
@@ -292,14 +294,15 @@ label dilemma4:
             $answer4 = "ask"
             $renpy.fix_rollback()
             $score *= 2 # Double amount of points
-            $send_to_file("choices.txt", "\nDilemma 4: " + answer4)
+#            $send_to_file("choices.txt", "\nDilemma 4: " + answer4)
             if is_dutch:
                 j "\“Hey, can I help you with that?\”"
                 m "\“Actually yes! I didn’t want to ask anyone, thank my ego for that. But the door is too heavy.\”"
 
     # Version A
-    if friends and versionA:
-        call switch_matilda from _call_switch_matilda
+#    if friends and versionA:
+#        call switch_matilda from _call_switch_matilda
+    call switch_matilda from _call_switch_matilda
 
     if answer4 != "ignore":
         "You wonder why Matilda is in a wheelchair."
@@ -366,7 +369,7 @@ label dilemma5:
         "Switch the topic":
             $answer5 = "switch_topic"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nDilemma 5: " + answer5)
+#            $send_to_file("choices.txt", "\nDilemma 5: " + answer5)
             "You try to change the topic."
             if is_dutch:
                 j "\“Sooo, nice weather we’re having, right?\”"
@@ -376,13 +379,13 @@ label dilemma5:
             $answer5 = "talk"
             $renpy.fix_rollback()
             $score += 1
-            $send_to_file("choices.txt", "\nDilemma 5: " + answer5)
+#            $send_to_file("choices.txt", "\nDilemma 5: " + answer5)
             "You let the person know that they are making Chloe uncomfortable with their questions and suggest they should stop."
             "You see that Chloe is visibly relieved."
         "Wait until the topic switches, but talk later in private":
             $answer5 = "wait"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nDilemma 5: " + answer5)
+#            $send_to_file("choices.txt", "\nDilemma 5: " + answer5)
             "You wait until the topic switches and talk to Chloe privately how she feels about it."
             show bg cosmos_lecture_blurred with Dissolve(0.5)
             chloe "\“I got myself back together and I’m OK now. Sorry you had to see my inner meltdown.\”"
@@ -395,8 +398,9 @@ label dilemma5:
             show bg cosmos_lecture with Dissolve(0.5)
 
     # Version A
-    if friends and versionA:
-        call switch_chloe from _call_switch_chloe
+#    if friends and versionA:
+#        call switch_chloe from _call_switch_chloe
+    call switch_chloe from _call_switch_chloe
 
     if answer5 == "switch_topic":
         "The group looks confused at you. However, they all sense the tense atmosphere, so they’re happy to switch the topic."
@@ -468,7 +472,7 @@ label dilemma6:
         "Let me think about it.":
             $answer6 = "maybe"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nDilemma 6: " + answer6)
+#            $send_to_file("choices.txt", "\nDilemma 6: " + answer6)
             "You are not sure yet."
             if is_dutch:
                 j "\“Wait, let me check with this other person real quick.\”"
@@ -479,8 +483,9 @@ label dilemma6:
             call dilemma6_yes from _call_dilemma6_yes
 
     # Version A
-    if friends and versionA:
-        call switch_val from _call_switch_val
+#    if friends and versionA:
+#        call switch_val from _call_switch_val
+    call switch_val from _call_switch_val
 
     # Consequential choice, second chance
     if answer6 == "maybe":
@@ -531,19 +536,20 @@ label dilemma7:
             $answer7 = "join"
             $renpy.fix_rollback()
             $score -= 1
-            $send_to_file("choices.txt", "\nDilemma 7: " + answer7)
+#            $send_to_file("choices.txt", "\nDilemma 7: " + answer7)
             "You join the group with your excellent singing skills."
         "Ask in private if Shiro is OK":
             call dilemma7_ask from _call_dilemma7_ask
         "Walk past it":
             $answer7 = "ignore"
             $renpy.fix_rollback
-            $send_to_file("choices.txt", "\nDilemma 7: " + answer7)
+#            $send_to_file("choices.txt", "\nDilemma 7: " + answer7)
             "You find birthday songs silly anyway and walk away, while giving a quick side eye."
 
     # Version A
-    if friends and versionA:
-        call switch_shiro from _call_switch_shiro
+#    if friends and versionA:
+#        call switch_shiro from _call_switch_shiro
+    call switch_shiro from _call_switch_shiro
 
     "Shiro walks away."
     hide shiro with Dissolve(0.5)
@@ -572,7 +578,7 @@ label bonus_dilemma:
         "Play it down":
             $bonus_answer = "downplay"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nBonus dilemma: " + bonus_answer)
+#            $send_to_file("choices.txt", "\nBonus dilemma: " + bonus_answer)
             if is_dutch:
                 j "\“Everybody has some autistic traits and that it’s not a big deal in telling people.\”"
             else:
@@ -582,7 +588,7 @@ label bonus_dilemma:
             $bonus_answer = "thank_support"
             $renpy.fix_rollback()
             $score += 1
-            $send_to_file("choices.txt", "\nBonus dilemma: " + bonus_answer)
+#            $send_to_file("choices.txt", "\nBonus dilemma: " + bonus_answer)
             if is_dutch:
                 j "\“I can’t make that choice for you, but I support you in whatever decision you take. Thanks a lot for sharing that with me.\”"
             else:
@@ -590,8 +596,9 @@ label bonus_dilemma:
             st "\“Thank you.\”"
 
     # Version A
-    if friends and versionA:
-        call switch_steph from _call_switch_steph
+#    if friends and versionA:
+#        call switch_steph from _call_switch_steph
+    call switch_steph from _call_switch_steph
 
     "Steph smiles and walks away."
     hide steph with Dissolve(0.5)
@@ -615,7 +622,7 @@ label dilemma8A:
         "Continue in Dutch, highlights in English":
             $answer8a = "both"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nDilemma 8A: " + answer8a)
+#            $send_to_file("choices.txt", "\nDilemma 8A: " + answer8a)
             if is_dutch:
                 j "\“I would continue casual communication in Dutch, but for important announcements I would switch to English.\”"
             else:
@@ -624,7 +631,7 @@ label dilemma8A:
             $answer8a = "Dutch"
             $renpy.fix_rollback()
             $score -= 1
-            $send_to_file("choices.txt", "\nDilemma 8A: " + answer8a)
+#            $send_to_file("choices.txt", "\nDilemma 8A: " + answer8a)
             if is_dutch:
                 j "\“As I see it, the majority of the house is Dutch. So I would stick to Dutch.\”"
             else:
@@ -633,7 +640,7 @@ label dilemma8A:
             $answer8a = "English"
             $renpy.fix_rollback()
             $score += 1
-            $send_to_file("choices.txt", "\nDilemma 8A: " + answer8a)
+#            $send_to_file("choices.txt", "\nDilemma 8A: " + answer8a)
             if is_dutch:
                 j "\“I would talk in English. So the international student can read the chat too.\”"
             else:
@@ -659,19 +666,19 @@ label dilemma8B:
         "English summary":
             $answer8b = "summary"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nDilemma 8B: " + answer8b)
+#            $send_to_file("choices.txt", "\nDilemma 8B: " + answer8b)
             "You would perform the announcement in Dutch and give a highlighted summary in English at the end. That seems fair, right?"
         "Speak Dutch":
             $answer8b = "Dutch"
             $renpy.fix_rollback()
             $score -= 1
-            $send_to_file("choices.txt", "\nDilemma 8B: " + answer8b)
+#            $send_to_file("choices.txt", "\nDilemma 8B: " + answer8b)
             "You would perform the announcement in Dutch. That way you can express yourself better and that’s only fair, right?"
         "Speak English":
             $answer8b = "English"
             $renpy.fix_rollback()
             $score += 1
-            $send_to_file("choices.txt", "\nDilemma 8B: " + answer8b)
+#            $send_to_file("choices.txt", "\nDilemma 8B: " + answer8b)
             "You would perform the announcement in English. While it costs a little more effort from your side, it’s more important that everybody receives the message loud and clear."
 
     return
@@ -702,18 +709,18 @@ label dilemma9:
             $answer9 = "halal"
             $renpy.fix_rollback()
             $score +=1
-            $send_to_file("choices.txt", "\nDilemma 9: " + answer9)
+#            $send_to_file("choices.txt", "\nDilemma 9: " + answer9)
             "Your friend deserves a tasty meal too. You take the extra mile to buy halal meat at another store."
         "Buy regular meat, but pretend it’s halal":
             $answer9 = "lie"
             $renpy.fix_rollback()
             $score -=1
-            $send_to_file("choices.txt", "\nDilemma 9: " + answer9)
+#            $send_to_file("choices.txt", "\nDilemma 9: " + answer9)
             "You don’t take your friend's wishes into account. But they don’t need to know that."
         "Just skip the meat":
             $answer9 = "skip"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nDilemma 9: " + answer9)
+#            $send_to_file("choices.txt", "\nDilemma 9: " + answer9)
             "You decide to make the dish with less ingredients."
             "If you don’t buy any ingredients that are not halal, they can’t cheat, right?"
 
@@ -751,14 +758,14 @@ label dilemma10:
         "Say nothing":
             $answer10 = "nothing"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nDilemma 10: " + answer10)
+#            $send_to_file("choices.txt", "\nDilemma 10: " + answer10)
             "Although you don’t think the same about it, you wait until their rant is over."
             "While tempting, you don’t want to point them out that they have their dietary wishes too."
         "Pretend to agree.":
             $answer10 = "agree"
             $renpy.fix_rollback()
             $score -= 1
-            $send_to_file("choices.txt", "\nDilemma 10: " + answer10)
+#            $send_to_file("choices.txt", "\nDilemma 10: " + answer10)
             "You pretend to agree with them and also do your two cents by saying it’s only for the elite and pretentious ones."
             "Yet in reality, you don’t think that at all, but you don’t want a confrontation."
 
@@ -776,13 +783,13 @@ label dilemma10:
                 "Keep quiet":
                     $answer10 = "keep_quiet"
                     $renpy.fix_rollback()
-                    $send_to_file("choices.txt", "\nDilemma 10: " + answer10)
+#                    $send_to_file("choices.txt", "\nDilemma 10: " + answer10)
                     "Although you don’t think the same about it, you decide to drop it and finish your plate."
                 "Speak your mind":
                     $answer10 = "speak_up"
                     $renpy.fix_rollback()
                     $score += 1
-                    $send_to_file("choices.txt", "\nDilemma 10: " + answer10)
+#                    $send_to_file("choices.txt", "\nDilemma 10: " + answer10)
                     show bg hostel_lobby_blurred with Dissolve(0.5)
                     if is_dutch:
                         j "\“Actually, I do disagree. People have their own reasons to be vegan. I think it’s unfair you criticise them for that.\”"
@@ -793,7 +800,7 @@ label dilemma10:
             $answer10 = "disagree"
             $renpy.fix_rollback()
             $score += 1
-            $send_to_file("choices.txt", "\nDilemma 10: " + answer10)
+#            $send_to_file("choices.txt", "\nDilemma 10: " + answer10)
             "You interrupt them and explain the reasons why people could be vegan."
             "Your friend shouldn’t criticise them for that, that’s unfair."
             call dilemma10_disagree from _call_dilemma10_disagree_1

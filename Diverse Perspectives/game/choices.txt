@@ -194,3 +194,610 @@ Dilemma 10: disagree
 Neutral ending
 
 The total score is 5
+
+---
+
+Version A
+
+Player 9
+
+Female
+Abroad
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: skip
+Dilemma 10: disagree
+
+Good ending
+
+The total score is 9
+
+---
+
+Version B
+
+Player 10
+
+Male
+Dutch
+
+Dilemma 1: idk
+Dilemma 2: stop
+Dilemma 3A: agree
+Dilemma 4: ask
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: skip
+Dilemma 10: disagree
+
+Neutral ending
+
+The total score is 7
+
+---
+
+Version A
+
+Player 11
+
+Female
+Abroad
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ignore
+Dilemma 7: ask
+Dilemma 8A: English
+Dilemma 9: halal
+Dilemma 10: disagree
+
+Good ending
+
+The total score is 9
+
+---
+
+Version B
+
+Player 12
+
+Female
+Dutch
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: wait
+Dilemma 6: yes
+Dilemma 7: ignore
+Dilemma 7: ignore
+Bonus dilemma: thank_support
+Dilemma 8A: both
+Dilemma 9: skip
+Dilemma 10: nothing
+
+Neutral ending
+
+The total score is 6
+
+---
+
+Version A
+
+Player 13
+
+Male
+Abroad
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: talk
+Dilemma 6: yes
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: both
+Dilemma 9: halal
+Dilemma 10: disagree
+
+Good ending
+
+The total score is 10
+
+---
+
+Version B
+
+Player 14
+
+Male
+Abroad
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: wait
+Dilemma 6: yes
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: halal
+Dilemma 10: disagree
+
+Good ending
+
+The total score is 10
+
+---
+
+Version A
+
+Player 15
+
+Female
+Dutch
+
+Dilemma 1: no
+Dilemma 2: stop
+Dilemma 3A: no_opinion
+Dilemma 4: ask
+Dilemma 5: talk
+Dilemma 6: yes
+Dilemma 7: ask
+Dilemma 8A: English
+Dilemma 9: skip
+Dilemma 10: nothing
+
+Good ending
+
+The total score is 8
+
+---
+
+Version B
+
+Player 16
+
+Female
+Dutch
+
+Dilemma 1: idk
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ignore
+Bonus dilemma: thank_support
+Dilemma 8A: both
+Dilemma 9: skip
+Dilemma 10: disagree
+
+Neutral ending
+
+The total score is 5
+
+---
+
+Version A
+
+Player 17
+
+Female
+Abroad
+
+Dilemma 1: no
+Dilemma 2: yell
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 4: ask
+Dilemma 5: wait
+Dilemma 6: yes
+Dilemma 7: ignore
+Bonus dilemma: thank_support
+Dilemma 8B: English
+
+Neutral ending
+
+The total score is 5
+
+---
+
+Version B
+
+Player 18
+
+Male
+Abroad
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: help
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: join
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: halal
+Dilemma 10: nothing
+
+Neutral ending
+
+The total score is 5
+
+---
+
+Version A
+
+Player 19
+
+Female
+Dutch
+
+Dilemma 1: no
+Dilemma 2: stop
+Dilemma 3A: agree
+Dilemma 4: help
+Dilemma 5: talk
+Dilemma 6: yes
+Dilemma 7: ignore
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: skip
+Dilemma 10: disagree
+
+Good ending
+
+The total score is 8
+
+---
+
+Version B
+
+Player 20
+
+Female
+Abroad
+
+Dilemma 1: no
+Dilemma 2: stop
+Dilemma 3A: disagree
+Dilemma 4: ask
+Dilemma 4: ask
+Dilemma 4: ask
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: halal
+Dilemma 10: disagree
+
+Good ending
+
+The total score is 12
+
+---
+
+Version A
+
+Player 21
+
+Female
+Dutch
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 3B: no_opinion
+Dilemma 4: help
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ask
+Dilemma 8A: English
+Dilemma 9: halal
+Dilemma 10: nothing
+
+Neutral ending
+
+The total score is 5
+
+---
+
+Version B
+
+Player 22
+
+Female
+Dutch
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: both
+Dilemma 9: skip
+Dilemma 10: disagree
+
+Good ending
+
+The total score is 8
+
+---
+
+Version A
+
+Player 23
+
+Female
+Abroad
+
+Dilemma 1: no
+Dilemma 2: stop
+Dilemma 3A: disagree
+Dilemma 4: ask
+Dilemma 5: talk
+Dilemma 6: yes
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: halal
+Dilemma 10: disagree
+
+Good ending
+
+Good ending
+
+The total score is 13
+
+---
+
+Version B
+
+Player 24
+
+Female
+Abroad
+
+Dilemma 1: no
+Dilemma 2: stop
+Dilemma 3A: disagree
+Dilemma 4: ask
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ignore
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: skip
+Dilemma 10: disagree
+
+Good ending
+
+The total score is 10
+
+---
+
+Version A
+
+Player 25
+
+Female
+Abroad
+
+Dilemma 1: idk
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 4: ask
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: halal
+Dilemma 10: disagree
+
+Good ending
+
+The total score is 8
+
+---
+
+Version B
+
+Player 26
+
+Male
+Dutch
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: talk
+Dilemma 6: yes
+Dilemma 7: ignore
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: skip
+Dilemma 10: disagree
+
+Good ending
+
+The total score is 9
+
+---
+
+Version A
+
+Player 27
+
+Non-binary
+Dutch
+
+Dilemma 1: no
+Dilemma 2: stop
+Dilemma 3A: disagree
+Dilemma 4: ask
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: skip
+Dilemma 10: disagree
+
+Good ending
+
+The total score is 11
+
+---
+
+Version B
+
+Player 28
+
+Male
+Abroad
+
+Dilemma 1: idk
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ignore
+Bonus dilemma: thank_support
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: halal
+Dilemma 10: nothing
+
+Neutral ending
+
+The total score is 6
+
+---
+
+Version A
+
+Player 29
+
+Female
+Dutch
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: talk
+Dilemma 6: yes
+Dilemma 7: ignore
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: skip
+Dilemma 10: disagree
+
+Good ending
+
+The total score is 10
+
+---
+
+Version B
+
+Player 30
+
+Female
+Dutch
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: help
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ignore
+Bonus dilemma: thank_support
+Dilemma 8A: both
+Dilemma 9: skip
+Dilemma 10: disagree
+
+Neutral ending
+
+The total score is 5
+
+---
+
+Version A
+
+Player 31
+
+Female
+Dutch
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: talk
+Dilemma 6: yes
+Dilemma 7: ask
+Dilemma 8A: English
+Dilemma 9: skip
+Dilemma 10: disagree
+
+Good ending
+
+The total score is 9
+
+---
+
+Version B
+
+Player 32
+
+Female
+Abroad
+
+Dilemma 1: no
+Dilemma 2: dodge
+Dilemma 3B: support
+Dilemma 4: ask
+Dilemma 5: switch_topic
+Dilemma 6: yes
+Dilemma 7: ask
+Bonus dilemma: thank_support
+Dilemma 8A: English
+Dilemma 9: skip
+Dilemma 10: disagree
+
+Good ending
+
+The total score is 9

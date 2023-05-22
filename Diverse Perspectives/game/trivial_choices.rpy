@@ -18,15 +18,15 @@ label gender:
         "Female":
             $gender = "female"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nFemale")
+#            $send_to_file("choices.txt", "\nFemale")
         "Male":
             $gender = "male"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nMale")
+#            $send_to_file("choices.txt", "\nMale")
         "Non-binary":
             $gender = "nb"
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nNon-binary")
+#            $send_to_file("choices.txt", "\nNon-binary")
 
     return
 
@@ -37,11 +37,11 @@ label country:
         "the Netherlands":
             $is_dutch = True
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nDutch")
+#            $send_to_file("choices.txt", "\nDutch")
         "Abroad":
             $is_dutch = False
             $renpy.fix_rollback()
-            $send_to_file("choices.txt", "\nAbroad")
+#            $send_to_file("choices.txt", "\nAbroad")
 
     return
 
